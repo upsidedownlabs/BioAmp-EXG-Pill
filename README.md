@@ -1,2 +1,2 @@
-# Muscle-SpikerPill
-An very small and elegant EMG board from Upside Down Labs.
+# BioAmp EMG Pill
+A small and elegant EMG board from Upside Down Labs.
