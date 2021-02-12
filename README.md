@@ -1,9 +1,9 @@
 # BioAmp EMG Pill
 
 
-![Project Category](https://img.shields.io/badge/Category-Bioelectronics-red) ![BioAmp EMG Pill Revision ](https://img.shields.io/badge/Version-0.1-success)
+![Project Category](https://img.shields.io/badge/Category-Bioelectronics-red) ![BioAmp EMG Pill Revision ](https://img.shields.io/badge/Version-0.5-success)
 
-BioAmp EMG Pill is a small and elegant EMG board from Upside Down Labs. The PCB itself is designed to be a single sided board so that you can make it at home using toner transfer method.
+BioAmp EMG Pill is a small and elegant Electromyography board which you can use with any micro with an ADC, tested with Arduino Nano.
 
 #### Hardware
 
@@ -13,7 +13,7 @@ BioAmp EMG Pill is a small and elegant EMG board from Upside Down Labs. The PCB 
 
 | Dimensions              |  Schematic |
 | :-------------------------: | :-------------------------: |
-| 47.50 x 12.40 mm![Upside Down Labs BioAmp EMG Pill dimensions](images/BioAmp-EMG-Pill_dimensions.png)  | ![Upside Down Labs BioAmp EMG Pill schematic](images/BioAmp-EMG-Pill_schematic.png) |
+| 32.25 x 10.05 mm![Upside Down Labs BioAmp EMG Pill dimensions](images/BioAmp-EMG-Pill_dimensions.png)  | ![Upside Down Labs BioAmp EMG Pill schematic](images/BioAmp-EMG-Pill_schematic.png) |
 
 
 
