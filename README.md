@@ -3,7 +3,7 @@
 
 ![Project Category](https://img.shields.io/badge/Category-Bioelectronics-red) ![BioAmp EMG Pill Revision ](https://img.shields.io/badge/Version-0.6-success)
 
-BioAmp EMG Pill is a small and elegant Electromyography board which you can use with any micro with an ADC, tested with Arduino Nano.
+BioAmp EMG Pill is a small and elegant Electromyography analog front end board that you can use with any 5v micro with an ADC.
 
 #### Hardware
 
