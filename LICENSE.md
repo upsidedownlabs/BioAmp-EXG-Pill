@@ -1,3 +1,5 @@
+# License agreement for Upside Down Labs - BioAmp EXG Pill
+
 ## Software
 
 MIT License
@@ -26,7 +28,6 @@ SOFTWARE.
 
 CERN Open Hardware Licence Version 2 - Strongly Reciprocal
 
-
 Preamble
 
 CERN has developed this licence to promote collaboration among
@@ -43,7 +44,6 @@ unmodified form only.
 Use of this Licence does not imply any endorsement by CERN of any
 Licensor or their designs nor does it imply any involvement by CERN in
 their development.
-
 
 1 Definitions
 
@@ -130,7 +130,6 @@ their development.
 
  1.13 'Convey' means to communicate to the public or distribute.
 
-
 2 Applicability
 
   2.1 This Licence governs the use, copying, modification, Conveying
@@ -146,7 +145,6 @@ their development.
 
   2.4 This Licence is not intended to restrict fair use, fair dealing,
       or any other similar right.
-
 
 3 Copying, Modifying and Conveying Covered Source
 
@@ -188,7 +186,6 @@ their development.
           contained in it, which remain licensed under their own
           applicable licences.
 
-
 4 Making and Conveying Products
 
 You may Make Products, and/or Convey them, provided that You either
@@ -200,7 +197,6 @@ specified in a Notice, the Product must visibly and securely display
 the Source Location on it or its packaging or documentation in the
 manner specified in that Notice.
 
-
 5 Research and Development
 
 You may Convey Covered Source, modified Covered Source or Products to
@@ -211,7 +207,6 @@ internal purposes and Conveying the Source or Products or any
 modifications to them to any person other than You. Any modifications
 made by the entity shall be deemed to be made by You pursuant to
 subsection 3.2.
-
 
 6 DISCLAIMER AND LIABILITY
 
@@ -245,7 +240,6 @@ subsection 3.2.
       damages, fees and expenses, including claims by third parties,
       in relation to such use.
 
-
 7 Patents
 
   7.1 Subject to the terms and conditions of this Licence, each
@@ -265,7 +259,6 @@ subsection 3.2.
       licensed to You under this Licence is invalid or unenforceable
       then any rights granted to You under this Licence shall
       terminate as of the date such process is initiated.
-
 
 8 General
 
@@ -314,8 +307,6 @@ subsection 3.2.
       acting as such, and third party beneficiary rights are
       specifically excluded.
 
-
 ## Documentation
-
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
