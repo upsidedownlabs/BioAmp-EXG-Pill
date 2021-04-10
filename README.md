@@ -1,19 +1,23 @@
-# BioAmp EMG Pill
+# BioAmp EXG Pill
 
 
-![Project Category](https://img.shields.io/badge/Category-Bioelectronics-red) ![BioAmp EMG Pill Revision ](https://img.shields.io/badge/Version-0.6-success)
+![Project Category](https://img.shields.io/badge/Category-Bioelectronics-gold) ![BioAmp EXG Pill Revision ](https://img.shields.io/badge/Version-0.7-success) [![BioAmp EXG Pill intro video ](https://img.shields.io/badge/Intro-YouTube-red)](https://www.youtube.com/watch?v=-G3z9fvQnuw) [![BioAmp EXG Pill Tindie ](https://img.shields.io/badge/Buy-Tindie-blue)](https://www.tindie.com/products/upsidedownlabs/bioamp-exg-pill/)
 
-BioAmp EMG Pill is a small and elegant Electromyography analog front end board that you can use with any 5v micro with an ADC.
+BioAmp EXG Pill is a small (2.54 X 1.00 cm) and elegant BioPotential signal acquisition analog front end board that you can use with any 5v micro with an ADC. It is capable of recording publication grade BioPotential signals like ECG, EMG, EOG, and EEG without the inclusion of any dedicated Hardware/Software filter, see [BioAmp EXG Pill v0.7 intro video](www.youtube.com/watch?v=-G3z9fvQnuw) for more info.
+
+![Upside Down Labs BioAmp EXG Pill Assembled](images/BioAmp-EXG-Pill-Assembled.png)
+
+![Magic of Upside Down Labs BioAmp EXG Pill Assembled](images/Magic-of-BioAmp-EXG-Pill.png)
 
 #### Hardware
 
 | Front              |  Back |
 | :-------------------------: | :-------------------------: |
-| ![Upside Down Labs BioAmp EMG Pill front](images/BioAmp-EMG-Pill_front.png)  | ![Upside Down Labs BioAmp EMG Pill back](images/BioAmp-EMG-Pill_back.png) |
+| ![Upside Down Labs BioAmp EXG Pill front](images/BioAmp-EXG-Pill-v0.7-front-darkpurple.png)  | ![Upside Down Labs BioAmp EXG Pill back](images/BioAmp-EXG-Pill-v0.7-back-darkpurple.png) |
 
 | Dimensions              |  Schematic |
 | :-------------------------: | :-------------------------: |
-| 30.00 x 10.00 mm![Upside Down Labs BioAmp EMG Pill dimensions](images/BioAmp-EMG-Pill_dimensions.png)  | ![Upside Down Labs BioAmp EMG Pill schematic](images/BioAmp-EMG-Pill_schematic.png) |
+| 30.00 x 10.00 mm![Upside Down Labs BioAmp EXG Pill dimensions](images/BioAmp-EXG-Pill_dimensions.png)  | ![Upside Down Labs BioAmp EXG Pill schematic](images/BioAmp-EXG-Pill_schematic.png) |
 
 
 
