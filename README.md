@@ -19,6 +19,9 @@ BioAmp EXG Pill is a small (2.54 X 1.00 cm) and elegant BioPotential signal acqu
 | :-------------------------: | :-------------------------: |
 | ![Upside Down Labs BioAmp EXG Pill dimensions](images/BioAmp-EXG-Pill_dimensions.png)  | ![Upside Down Labs BioAmp EXG Pill schematic](images/BioAmp-EXG-Pill_schematic.png) |
 
+| Licenses Facts              |  OSHWA Certification |
+| :-------------------------: | :-------------------------: |
+| <a href="LICENSE.md"><img src="images/Licenses_facts.svg" width="400" alt="Open Source Licenses Facts"/></a>  | <a href="https://certification.oshwa.org/in000026.html"><img src="images/OSHW_mark_IN000026.png" width="300" alt="Open Source Hardware Certification mark"/></a> |
 
 
 ## License
