@@ -45,7 +45,7 @@ void loop() {
 	if(timer < 0){
 		timer += 1000000 / SampleRate;
 		float sensorValue = analogRead(inputPin);
-		float EEGSignal = bandPass(sensorValue);
+		float EEGSignal = EEGFilter(sensorValue);
 		Serial.println(EEGSignal);
 	}
 }
@@ -56,7 +56,7 @@ void loop() {
 // Reference: 
 // https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html
 // https://courses.ideate.cmu.edu/16-223/f2020/Arduino/FilterDemos/filter_gen.py
-float bandPass(float input) {
+float EEGFilter(float input) {
 	float output = input;
 	{
 		static float z1, z2; // filter section state
