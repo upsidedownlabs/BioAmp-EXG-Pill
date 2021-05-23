@@ -20,7 +20,7 @@ BioAmp EXG Pill works with any 5V microcontroller with an ADC like Arduino UNO/N
 |2 | [EMGFilter](software/EMGFilter)| A 74.5 - 149.5 Hz band pass filter sketch for clean Electromyography.|
 |3 | [ECGFilter](software/ECGFilter)| A 0.5 - 44.5 Hz band-pass filter sketch for clean Electrocardiography.|
 |4 | [EOGFilter](software/EOGFilter)| A 0.5 - 19.5 Hz band-pass filter sketch for clean Electrooculography.|
-|5 | [EEGFilter](software/EEGFilter)| A 0.5 - 19.5 Hz band-pass filter sketch for clean Electroencephalography.|
+|5 | [EEGFilter](software/EEGFilter)| A 0.5 - 29.5 Hz band-pass filter sketch for clean Electroencephalography.|
 |6 | [EMGEnvelop](software/EMGEnvelop)| EMG signal envelop detection for robotics and biomedical applications.|
 |7 | [LEDBarGraph](software/LEDBarGraph)| LED bar graph showing EMG amplitude.|
 |8 | [ServoControl](software/ServoControl)| Servo motor control with EMG.|
