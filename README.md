@@ -24,16 +24,16 @@ BioAmp EXG Pill works with any 5V microcontroller with an ADC like Arduino UNO/N
 |6 | [EMGEnvelop](software/EMGEnvelop)| EMG signal envelop detection for robotics and biomedical applications.|
 |7 | [LEDBarGraph](software/LEDBarGraph)| LED bar graph showing EMG amplitude.|
 |8 | [ServoControl](software/ServoControl)| Servo motor control with EMG.|
+|9 | [HeartBeatDetection](software/HeartBeatDetection)| Standard deviation based heart beat detection algorithm.|
 
 To-Do:
 
 | No. | Program| Description |
 | ---- | ---- | ---- |
-|1 | PeakDetection| Simple peak detection algorithm.|
-|2 | HeartRate | Heart rate calculation with ECG.|
-|3 | BrainWaves | Brain waves amplitude with FFT.|
-|4 | EOGController | EOG based eye movement detection (left/right) to create a game controller.|
-|5 | BlinkDetection | EOG based eye blink detection.|
+|1 | HeartRate | Heart rate calculation with ECG.|
+|2 | BrainWaves | Brain waves amplitude with FFT.|
+|3 | EOGController | EOG based eye movement detection (left/right) to create a game controller.|
+|4 | BlinkDetection | EOG based eye blink detection.|
 
 
 
