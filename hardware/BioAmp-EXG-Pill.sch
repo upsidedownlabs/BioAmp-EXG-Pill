@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "BioAmp EXG Pill"
-Date "2021-06-26"
-Rev "1.0a"
+Date "2021-08-06"
+Rev "1.0b"
 Comp "Upside Down Labs"
 Comment1 "Records EMG, ECG, EOG, and EEG"
 Comment2 "5v compatible EXG hardware"
@@ -16,12 +16,12 @@ $EndDescr
 $Comp
 L Amplifier_Operational:TL074 U1
 U 2 1 601003D3
-P 4290 1980
-F 0 "U1" H 4370 2140 50  0000 C CNN
-F 1 "TL074" H 4240 1990 50  0000 C CNN
-F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 4240 2080 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 4340 2180 50  0001 C CNN
-	2    4290 1980
+P 3450 1970
+F 0 "U1" H 3530 2130 50  0000 C CNN
+F 1 "TL074" H 3400 1980 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 3400 2070 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 3500 2170 50  0001 C CNN
+	2    3450 1970
 	1    0    0    1   
 $EndComp
 $Comp
@@ -38,57 +38,57 @@ $EndComp
 $Comp
 L Device:R R9
 U 1 1 60117BDC
-P 3840 1880
-F 0 "R9" V 3760 1880 50  0000 C CNN
-F 1 "1K" V 3840 1890 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3770 1880 50  0001 C CNN
-F 3 "~" H 3840 1880 50  0001 C CNN
-	1    3840 1880
+P 3000 1870
+F 0 "R9" V 2920 1870 50  0000 C CNN
+F 1 "1K" V 3000 1880 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2930 1870 50  0001 C CNN
+F 3 "~" H 3000 1870 50  0001 C CNN
+	1    3000 1870
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:R R4
 U 1 1 6012231E
-P 3440 1530
-F 0 "R4" V 3360 1530 50  0000 C CNN
-F 1 "1K" V 3440 1530 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3370 1530 50  0001 C CNN
-F 3 "~" H 3440 1530 50  0001 C CNN
-	1    3440 1530
+P 2600 1520
+F 0 "R4" V 2520 1520 50  0000 C CNN
+F 1 "1K" V 2600 1520 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2530 1520 50  0001 C CNN
+F 3 "~" H 2600 1520 50  0001 C CNN
+	1    2600 1520
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:R R5
 U 1 1 60122971
-P 4290 1630
-F 0 "R5" V 4210 1630 50  0000 C CNN
-F 1 "10K" V 4290 1630 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 4220 1630 50  0001 C CNN
-F 3 "~" H 4290 1630 50  0001 C CNN
-	1    4290 1630
+P 3450 1620
+F 0 "R5" V 3370 1620 50  0000 C CNN
+F 1 "10K" V 3450 1620 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3380 1620 50  0001 C CNN
+F 3 "~" H 3450 1620 50  0001 C CNN
+	1    3450 1620
 	0    1    1    0   
 $EndComp
-Text GLabel 4670 1980 2    50   Input ~ 0
+Text GLabel 3830 1970 2    50   Input ~ 0
 inaOUT
-Text GLabel 3070 1980 0    50   Input ~ 0
+Text GLabel 2230 1970 0    50   Input ~ 0
 IN-
-Text GLabel 3970 2080 0    50   Input ~ 0
+Text GLabel 3130 2070 0    50   Input ~ 0
 IN+
 Wire Wire Line
-	3590 1530 3690 1530
+	2750 1520 2850 1520
 Wire Wire Line
-	3690 1530 3690 1880
+	2850 1520 2850 1870
 Wire Wire Line
-	3290 1530 3090 1530
+	2450 1520 2250 1520
 Wire Wire Line
-	4440 1630 4590 1630
+	3600 1620 3750 1620
 Wire Wire Line
-	4590 1630 4590 1980
+	3750 1620 3750 1970
 Wire Wire Line
-	4140 1630 3990 1630
+	3300 1620 3150 1620
 Wire Wire Line
-	3990 1630 3990 1880
-Connection ~ 3990 1880
+	3150 1620 3150 1870
+Connection ~ 3150 1870
 $Comp
 L power:VCC #PWR07
 U 1 1 60378EF6
@@ -100,53 +100,14 @@ F 3 "" H 3210 6150 50  0001 C CNN
 	1    3210 6150
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector_Generic:Conn_01x03 J2
-U 1 1 60498730
-P 9900 5650
-F 0 "J2" H 9980 5715 50  0000 L CNN
-F 1 "BioAmp Input" H 9975 5625 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 9900 5650 50  0001 C CNN
-F 3 "~" H 9900 5650 50  0001 C CNN
-	1    9900 5650
-	1    0    0    -1  
-$EndComp
-Text GLabel 8385 5550 0    50   Input ~ 0
-OUT
-$Comp
-L power:GND #PWR06
-U 1 1 604A536C
-P 8040 5850
-F 0 "#PWR06" H 8040 5600 50  0001 C CNN
-F 1 "GND" H 8040 5700 50  0000 C CNN
-F 2 "" H 8040 5850 50  0001 C CNN
-F 3 "" H 8040 5850 50  0001 C CNN
-	1    8040 5850
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VCC #PWR05
-U 1 1 604A58B7
-P 8040 5600
-F 0 "#PWR05" H 8040 5450 50  0001 C CNN
-F 1 "VCC" V 7990 5700 50  0000 L CNN
-F 2 "" H 8040 5600 50  0001 C CNN
-F 3 "" H 8040 5600 50  0001 C CNN
-	1    8040 5600
-	1    0    0    -1  
-$EndComp
-Wire Notes Line
-	6970 470  6970 6535
-Text Notes 2800 2720 0    118  ~ 24
-Instrumentation Amp
+Text Notes 2650 2750 0    118  ~ 24
+Instrumentation Amp (INA)
 Text Notes 2800 5170 0    118  ~ 24
 1000x Gain (Bandpass)
 Text Notes 2060 7730 0    118  ~ 24
 Amp Ref + Driven Right Leg (DRL) 
 Text Notes 8130 5180 0    118  ~ 24
 Power supply filtering
-Text Notes 7980 6500 0    118  ~ 24
-Header pins / Connectors
 $Comp
 L Amplifier_Operational:TL074 U1
 U 4 1 60101E5C
@@ -159,19 +120,6 @@ F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 3810 6580 50  0001 C CNN
 	1    0    0    1   
 $EndComp
 Text GLabel 4460 6380 2    50   Input ~ 0
-DRL
-$Comp
-L Connector_Generic:Conn_01x03 J1
-U 1 1 602D9464
-P 8585 5650
-F 0 "J1" H 8660 5720 50  0000 L CNN
-F 1 "BioAmp Output" H 8655 5620 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 8585 5650 50  0001 C CNN
-F 3 "~" H 8585 5650 50  0001 C CNN
-	1    8585 5650
-	1    0    0    -1  
-$EndComp
-Text GLabel 9700 5550 0    50   Input ~ 0
 DRL
 $Comp
 L Device:R R14
@@ -187,16 +135,16 @@ $EndComp
 $Comp
 L Amplifier_Operational:TL074 U1
 U 1 1 600FF580
-P 3390 1880
-F 0 "U1" H 3430 2060 50  0000 C CNN
-F 1 "TL074" H 3335 1885 50  0000 C CNN
-F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 3340 1980 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 3440 2080 50  0001 C CNN
-	1    3390 1880
+P 2550 1870
+F 0 "U1" H 2590 2050 50  0000 C CNN
+F 1 "TL074" H 2495 1875 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 2500 1970 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 2600 2070 50  0001 C CNN
+	1    2550 1870
 	1    0    0    1   
 $EndComp
-Connection ~ 3690 1880
-Connection ~ 3090 1780
+Connection ~ 2850 1870
+Connection ~ 2250 1770
 Wire Wire Line
 	4060 6380 4060 6090
 Wire Wire Line
@@ -214,12 +162,12 @@ Wire Wire Line
 	4170 6090 4060 6090
 Connection ~ 4060 6090
 Wire Wire Line
-	4590 1980 4670 1980
-Connection ~ 4590 1980
-Text GLabel 2790 1780 0    50   Input ~ 0
+	3750 1970 3830 1970
+Connection ~ 3750 1970
+Text GLabel 1950 1770 0    50   Input ~ 0
 ampRef
 $Bitmap
-Pos 9950 6850
+Pos 9870 6830
 Scale 1.000000
 Data
 89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52 00 00 02 A8 00 00 00 9F 08 06 00 00 00 35 58 2B 
@@ -816,161 +764,118 @@ A1 4F 69 60 85 18 42 ED 4F A1 50 A0 C0 13 E9 64 BE 82 A6 6D 59 36 36 5E 63 CC 2E
 EndData
 $EndBitmap
 Wire Wire Line
-	3780 1080 4140 1080
+	2940 1070 3300 1070
 Wire Wire Line
-	4140 1080 4140 1630
-Connection ~ 4140 1630
+	3300 1070 3300 1620
+Connection ~ 3300 1620
 Wire Wire Line
-	3480 1080 3090 1080
+	2640 1070 2250 1070
 Wire Wire Line
-	3090 1080 3090 1530
-Connection ~ 3090 1530
+	2250 1070 2250 1520
+Connection ~ 2250 1520
 Wire Wire Line
-	3090 1530 3090 1780
+	2250 1520 2250 1770
 Wire Notes Line
-	2970 850  2970 1320
+	2130 840  2130 1310
 Wire Notes Line
-	2970 1320 4320 1320
+	2130 1310 3480 1310
 Wire Notes Line
-	4320 1320 4320 850 
+	3480 1310 3480 840 
 Wire Notes Line
-	4320 850  2970 850 
-Text Notes 3210 820  0    39   ~ 0
+	3480 840  2130 840 
+Text Notes 2370 810  0    39   ~ 0
 INA gain config (only increase)
 $Comp
 L Device:R R8
 U 1 1 60119AAA
-P 2940 1780
-F 0 "R8" V 2860 1780 50  0000 C CNN
-F 1 "10K" V 2940 1780 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2870 1780 50  0001 C CNN
-F 3 "~" H 2940 1780 50  0001 C CNN
-	1    2940 1780
+P 2100 1770
+F 0 "R8" V 2020 1770 50  0000 C CNN
+F 1 "10K" V 2100 1770 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2030 1770 50  0001 C CNN
+F 3 "~" H 2100 1770 50  0001 C CNN
+	1    2100 1770
 	0    1    1    0   
 $EndComp
 $Comp
 L Amplifier_Operational:TL074 U1
 U 3 1 60100F1E
-P 3980 4380
-F 0 "U1" H 4005 4560 50  0000 C CNN
-F 1 "TL074" H 3940 4385 50  0000 C CNN
-F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 3930 4480 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 4030 4580 50  0001 C CNN
-	3    3980 4380
+P 2510 4480
+F 0 "U1" H 2535 4660 50  0000 C CNN
+F 1 "TL074" H 2470 4485 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 2460 4580 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 2560 4680 50  0001 C CNN
+	3    2510 4480
 	1    0    0    1   
 $EndComp
 $Comp
 L Device:R R11
 U 1 1 6017635B
-P 3950 4060
-F 0 "R11" V 4050 4070 50  0000 C CNN
-F 1 "1M" V 3950 4070 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3880 4060 50  0001 C CNN
-F 3 "~" H 3950 4060 50  0001 C CNN
-	1    3950 4060
+P 2480 4160
+F 0 "R11" V 2580 4170 50  0000 C CNN
+F 1 "1M" V 2480 4170 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2410 4160 50  0001 C CNN
+F 3 "~" H 2480 4160 50  0001 C CNN
+	1    2480 4160
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:R R12
 U 1 1 6017BB52
-P 3120 4280
-F 0 "R12" V 3030 4280 50  0000 C CNN
-F 1 "1K" V 3120 4280 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3050 4280 50  0001 C CNN
-F 3 "~" H 3120 4280 50  0001 C CNN
-	1    3120 4280
+P 1650 4380
+F 0 "R12" V 1560 4380 50  0000 C CNN
+F 1 "1K" V 1650 4380 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1580 4380 50  0001 C CNN
+F 3 "~" H 1650 4380 50  0001 C CNN
+	1    1650 4380
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:C C6
 U 1 1 6017C191
-P 3420 4280
-F 0 "C6" V 3168 4280 50  0000 C CNN
-F 1 "47uF" V 3259 4280 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 3458 4130 50  0001 C CNN
-F 3 "~" H 3420 4280 50  0001 C CNN
-	1    3420 4280
+P 1950 4380
+F 0 "C6" V 1698 4380 50  0000 C CNN
+F 1 "47uF" V 1789 4380 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 1988 4230 50  0001 C CNN
+F 3 "~" H 1950 4380 50  0001 C CNN
+	1    1950 4380
 	0    1    1    0   
 $EndComp
-Text GLabel 4340 4380 2    50   Input ~ 0
+Text GLabel 2940 4480 2    50   Input ~ 0
 OUT
-Text GLabel 2970 4280 0    50   Input ~ 0
+Text GLabel 1500 4380 0    50   Input ~ 0
 inaOUT
-Text GLabel 3660 4480 0    50   Input ~ 0
+Text GLabel 2190 4580 0    50   Input ~ 0
 ampRef
 Wire Wire Line
-	4280 4380 4310 4380
+	2100 4380 2150 4380
 Wire Wire Line
-	3570 4280 3620 4280
+	2330 4160 2150 4160
 Wire Wire Line
-	4100 4060 4310 4060
+	2150 4160 2150 4380
+Connection ~ 2150 4380
 Wire Wire Line
-	4310 4060 4310 4380
-Connection ~ 4310 4380
-Wire Wire Line
-	4310 4380 4340 4380
-Wire Wire Line
-	3800 4060 3620 4060
-Wire Wire Line
-	3620 4060 3620 4280
-Connection ~ 3620 4280
-Wire Wire Line
-	3620 4280 3680 4280
+	2150 4380 2210 4380
 $Comp
 L Device:C C2
 U 1 1 60BAF6C7
-P 3970 3450
-F 0 "C2" V 4010 3360 50  0000 C CNN
-F 1 "47nF" V 4110 3450 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4008 3300 50  0001 C CNN
-F 3 "~" H 3970 3450 50  0001 C CNN
-	1    3970 3450
+P 2500 3550
+F 0 "C2" V 2540 3460 50  0000 C CNN
+F 1 "47nF" V 2640 3550 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2538 3400 50  0001 C CNN
+F 3 "~" H 2500 3550 50  0001 C CNN
+	1    2500 3550
 	0    1    -1   0   
 $EndComp
 Wire Wire Line
-	4120 3810 4310 3810
-Connection ~ 4310 4060
+	2350 3910 2150 3910
 Wire Wire Line
-	3820 3810 3620 3810
+	2150 3910 2150 4160
+Connection ~ 2150 4160
 Wire Wire Line
-	3620 3810 3620 4060
-Connection ~ 3620 4060
+	2350 3550 2150 3550
 Wire Wire Line
-	4120 3450 4310 3450
-Wire Wire Line
-	3820 3450 3620 3450
-Wire Wire Line
-	3620 3450 3620 3810
-Connection ~ 3620 3810
-$Comp
-L Device:C C3
-U 1 1 601740C2
-P 3970 3810
-F 0 "C3" V 4010 3700 50  0000 C CNN
-F 1 "47nF" V 4110 3810 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4008 3660 50  0001 C CNN
-F 3 "~" H 3970 3810 50  0001 C CNN
-	1    3970 3810
-	0    1    -1   0   
-$EndComp
-$Comp
-L Device:R R10
-U 1 1 60BD7FA4
-P 4310 3640
-F 0 "R10" H 4180 3650 50  0000 C CNN
-F 1 "0R" V 4310 3650 50  0000 C CNN
-F 2 "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" V 4240 3640 50  0001 C CNN
-F 3 "~" H 4310 3640 50  0001 C CNN
-	1    4310 3640
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	4310 3450 4310 3490
-Wire Wire Line
-	4310 3790 4310 3810
-Connection ~ 4310 3810
-Wire Wire Line
-	4310 3810 4310 4060
+	2150 3550 2150 3910
+Connection ~ 2150 3910
 $Comp
 L Device:C C5
 U 1 1 601A5E02
@@ -1071,131 +976,29 @@ Wire Wire Line
 Connection ~ 3210 6780
 Wire Wire Line
 	3210 6180 3210 6150
-Wire Notes Line
-	4210 3320 4210 3910
-Wire Notes Line
-	4210 3910 4520 3910
-Wire Notes Line
-	4520 3910 4520 3320
-Wire Notes Line
-	4520 3320 4210 3320
-Text Notes 4190 3280 0    39   ~ 0
-Filter config
 Wire Wire Line
-	3680 4480 3660 4480
+	2210 4580 2190 4580
 Wire Wire Line
-	3070 1980 3090 1980
+	2230 1970 2250 1970
 Wire Wire Line
-	3990 2080 3970 2080
+	3150 2070 3130 2070
 $Comp
 L Device:R R1
 U 1 1 60B3C4E8
-P 3630 1080
-F 0 "R1" V 3550 1080 50  0000 C CNN
-F 1 "RG" V 3630 1080 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 3560 1080 50  0001 C CNN
-F 3 "~" H 3630 1080 50  0001 C CNN
-	1    3630 1080
+P 2790 1070
+F 0 "R1" V 2700 1070 50  0000 C CNN
+F 1 "RG" V 2790 1070 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 2720 1070 50  0001 C CNN
+F 3 "~" H 2790 1070 50  0001 C CNN
+	1    2790 1070
 	0    1    1    0   
 $EndComp
 Wire Notes Line
 	470  2810 11220 2810
 Wire Notes Line
 	470  5250 11220 5250
-$Comp
-L Device:R R6
-U 1 1 60D4E4F0
-P 8910 1740
-F 0 "R6" V 9010 1750 50  0000 C CNN
-F 1 "1M" V 8910 1750 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 8840 1740 50  0001 C CNN
-F 3 "~" H 8910 1740 50  0001 C CNN
-	1    8910 1740
-	0    1    1    0   
-$EndComp
-Text GLabel 9480 1740 2    50   Input ~ 0
-DRL
-Text GLabel 9470 1430 2    50   Input ~ 0
-DRL
-Wire Wire Line
-	9410 1740 9480 1740
-Wire Wire Line
-	9410 1430 9470 1430
-Wire Wire Line
-	8710 1740 8760 1740
-Wire Wire Line
-	8720 1430 8770 1430
 Text Notes 8280 2770 0    118  ~ 24
 Electrode reference
-$Comp
-L Device:R R2
-U 1 1 60D5FBE8
-P 8920 1430
-F 0 "R2" V 9020 1440 50  0000 C CNN
-F 1 "1M" V 8920 1440 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 8850 1430 50  0001 C CNN
-F 3 "~" H 8920 1430 50  0001 C CNN
-	1    8920 1430
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R3
-U 1 1 60D8425F
-P 9260 1430
-F 0 "R3" V 9360 1440 50  0000 C CNN
-F 1 "0R" V 9260 1440 50  0000 C CNN
-F 2 "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" V 9190 1430 50  0001 C CNN
-F 3 "~" H 9260 1430 50  0001 C CNN
-	1    9260 1430
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R7
-U 1 1 60D84534
-P 9260 1740
-F 0 "R7" V 9360 1750 50  0000 C CNN
-F 1 "0R" V 9260 1750 50  0000 C CNN
-F 2 "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" V 9190 1740 50  0001 C CNN
-F 3 "~" H 9260 1740 50  0001 C CNN
-	1    9260 1740
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	9070 1430 9110 1430
-Wire Wire Line
-	9060 1740 9110 1740
-Wire Notes Line
-	9060 1250 9060 1930
-Wire Notes Line
-	9060 1930 9450 1930
-Wire Notes Line
-	9450 1930 9450 1250
-Wire Notes Line
-	9450 1250 9060 1250
-Text Notes 9010 1210 0    39   ~ 0
-Electrode config
-Text GLabel 9700 5750 0    50   Input ~ 0
-IN-
-Text GLabel 9700 5650 0    50   Input ~ 0
-IN+
-Wire Wire Line
-	8390 5750 8385 5750
-Wire Wire Line
-	8040 5750 8040 5850
-Connection ~ 8385 5750
-Wire Wire Line
-	8385 5750 8040 5750
-Wire Wire Line
-	8390 5650 8385 5650
-Wire Wire Line
-	8040 5650 8040 5600
-Connection ~ 8385 5650
-Wire Wire Line
-	8385 5650 8040 5650
-Text GLabel 8720 1430 0    50   Input ~ 0
-IN-
-Text GLabel 8710 1740 0    50   Input ~ 0
-IN+
 $Comp
 L power:GND #PWR03
 U 1 1 60365567
@@ -1231,18 +1034,293 @@ Wire Wire Line
 $Comp
 L Device:C C1
 U 1 1 60E20DCF
-P 4850 1220
-F 0 "C1" V 4680 1220 50  0000 C CNN
-F 1 "2.2nF" V 4990 1220 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4888 1070 50  0001 C CNN
-F 3 "~" H 4850 1220 50  0001 C CNN
-	1    4850 1220
+P 5380 1620
+F 0 "C1" V 5210 1620 50  0000 C CNN
+F 1 "2.2nF" V 5520 1620 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5418 1470 50  0001 C CNN
+F 3 "~" H 5380 1620 50  0001 C CNN
+	1    5380 1620
 	0    1    -1   0   
 $EndComp
-Text GLabel 5000 1220 2    50   Input ~ 0
+Text GLabel 5530 1620 2    50   Input ~ 0
 IN+
-Text GLabel 4700 1220 0    50   Input ~ 0
+Text GLabel 5230 1620 0    50   Input ~ 0
 IN-
-Text Notes 4570 4230 0    47   ~ 9
-Duplicate pads for C3 & R11 on the back side of the PCB\ncan be used to configure the bandpass filter. Use them to\nconfigure output Gain (decrease) & Band (frequency range).
+Text Notes 4100 4740 0    59   ~ 0
+C8 (BPFC_C) & R3 (BPFC_R) on the back side of the PCB\ncan be used to configure the bandpass filter. Use them to\nconfigure output Gain (decrease) & Band (frequency range).
+Wire Wire Line
+	9870 1245 9920 1245
+$Comp
+L Jumper:SolderJumper_3_Open JP1
+U 1 1 610C1E99
+P 9120 1245
+F 0 "JP1" H 9120 1450 50  0000 C CNN
+F 1 "SolderJumper_3_Open" H 9120 1359 50  0000 C CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 9120 1245 50  0001 C CNN
+F 3 "~" H 9120 1245 50  0001 C CNN
+	1    9120 1245
+	1    0    0    -1  
+$EndComp
+Text GLabel 9920 1245 2    50   Input ~ 0
+IN+
+Text GLabel 9120 1645 3    50   Input ~ 0
+DRL
+$Comp
+L Device:R R6
+U 1 1 60D4E4F0
+P 9720 1245
+F 0 "R6" V 9820 1255 50  0000 C CNN
+F 1 "1M" V 9720 1255 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 9650 1245 50  0001 C CNN
+F 3 "~" H 9720 1245 50  0001 C CNN
+	1    9720 1245
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8320 1245 8370 1245
+$Comp
+L Device:R R2
+U 1 1 60D5FBE8
+P 8520 1245
+F 0 "R2" V 8620 1255 50  0000 C CNN
+F 1 "1M" V 8520 1255 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 8450 1245 50  0001 C CNN
+F 3 "~" H 8520 1245 50  0001 C CNN
+	1    8520 1245
+	0    1    1    0   
+$EndComp
+Text GLabel 8320 1245 0    50   Input ~ 0
+IN-
+Text Notes 8895 920  0    39   ~ 0
+Electrode config
+Wire Wire Line
+	9120 1395 9120 1645
+Wire Wire Line
+	9320 1245 9570 1245
+Wire Wire Line
+	8670 1245 8920 1245
+Wire Notes Line
+	8695 945  8695 1520
+Wire Notes Line
+	8695 1520 9545 1520
+Wire Notes Line
+	9545 1520 9545 945 
+Wire Notes Line
+	9545 945  8695 945 
+$Comp
+L Jumper:SolderJumper_2_Open JP2
+U 1 1 61102AF7
+P 2840 3710
+F 0 "JP2" V 2790 3850 50  0000 L CNN
+F 1 "SolderJumper_2_Open" V 2870 3840 50  0000 L CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 2840 3710 50  0001 C CNN
+F 3 "~" H 2840 3710 50  0001 C CNN
+	1    2840 3710
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2650 3550 2840 3550
+Wire Wire Line
+	2840 3550 2840 3560
+Text Notes 2680 3470 0    39   ~ 0
+Narrow Band
+Wire Notes Line
+	2740 3490 2740 3880
+Wire Notes Line
+	2740 3880 2950 3880
+Wire Notes Line
+	2950 3880 2950 3490
+Wire Notes Line
+	2950 3490 2740 3490
+Wire Notes Line
+	4900 1310 4900 1900
+Wire Notes Line
+	4900 1900 5830 1900
+Wire Notes Line
+	5830 1900 5830 1310
+Wire Notes Line
+	5830 1310 4900 1310
+Text Notes 5120 1290 0    39   ~ 0
+INA Input filter
+Text GLabel 2060 3910 0    50   Input ~ 0
+bpfIN
+Wire Wire Line
+	2060 3910 2150 3910
+Text GLabel 2940 4160 2    50   Input ~ 0
+bpfOUT
+Wire Wire Line
+	2840 3860 2840 3910
+Wire Wire Line
+	2650 3910 2840 3910
+Wire Wire Line
+	2840 3910 2840 4160
+Wire Wire Line
+	2840 4480 2810 4480
+Connection ~ 2840 3910
+Wire Wire Line
+	2940 4480 2840 4480
+Connection ~ 2840 4480
+Wire Wire Line
+	2940 4160 2840 4160
+Connection ~ 2840 4160
+Wire Wire Line
+	2840 4160 2840 4480
+Wire Wire Line
+	2630 4160 2840 4160
+$Comp
+L Device:C C3
+U 1 1 601740C2
+P 2500 3910
+F 0 "C3" V 2540 3800 50  0000 C CNN
+F 1 "47nF" V 2640 3910 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2538 3760 50  0001 C CNN
+F 3 "~" H 2500 3910 50  0001 C CNN
+	1    2500 3910
+	0    1    -1   0   
+$EndComp
+$Comp
+L Device:C C8
+U 1 1 611A7BA0
+P 5520 3820
+F 0 "C8" V 5380 3820 50  0000 C CNN
+F 1 "BPFC_C" V 5650 3820 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5558 3670 50  0001 C CNN
+F 3 "~" H 5520 3820 50  0001 C CNN
+	1    5520 3820
+	0    1    -1   0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 611A7F93
+P 5520 4090
+F 0 "R3" V 5520 4090 50  0000 C CNN
+F 1 "BPFC_R" V 5630 4090 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 5450 4090 50  0001 C CNN
+F 3 "~" H 5520 4090 50  0001 C CNN
+	1    5520 4090
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5670 3820 5670 3960
+Wire Wire Line
+	5370 3820 5370 3960
+Wire Wire Line
+	5770 3960 5670 3960
+Connection ~ 5670 3960
+Wire Wire Line
+	5670 3960 5670 4090
+Wire Wire Line
+	5250 3960 5370 3960
+Connection ~ 5370 3960
+Wire Wire Line
+	5370 3960 5370 4090
+Text GLabel 5770 3960 2    50   Input ~ 0
+bpfOUT
+Text GLabel 5250 3960 0    50   Input ~ 0
+bpfIN
+Wire Notes Line
+	4750 3530 4750 4320
+Wire Notes Line
+	4750 4320 6270 4320
+Wire Notes Line
+	6270 4320 6270 3530
+Wire Notes Line
+	6270 3530 4750 3530
+Text Notes 4940 3500 0    39   ~ 0
+Band Pass Filter Configuration (BPFC)
+Text Notes 8530 7330 0    118  ~ 0
+contact@upsidedownlabs.tech
+$Comp
+L udlabs:LOGO_UDLABS U2
+U 1 1 612DF07B
+P 6950 940
+F 0 "U2" H 6975 1285 50  0000 C CNN
+F 1 "LOGO_UDLABS" H 6975 1194 50  0000 C CNN
+F 2 "udlabs:EXG" H 6950 940 50  0001 C CNN
+F 3 "" H 6950 940 50  0001 C CNN
+	1    6950 940 
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	6400 470  6400 980 
+Wire Notes Line
+	6400 980  7540 980 
+Wire Notes Line
+	7540 980  7540 480 
+Text Notes 7980 6500 0    118  ~ 24
+Header pins / Connectors
+Text GLabel 10140 5790 2    50   Input ~ 0
+IN+
+Text GLabel 10140 5690 2    50   Input ~ 0
+IN-
+Text GLabel 10140 5890 2    50   Input ~ 0
+DRL
+$Comp
+L Connector_Generic:Conn_01x03 J2
+U 1 1 60498730
+P 9940 5790
+F 0 "J2" H 10020 5855 50  0000 L CNN
+F 1 "BioAmp Input" H 10015 5765 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 9940 5790 50  0001 C CNN
+F 3 "~" H 9940 5790 50  0001 C CNN
+	1    9940 5790
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8385 5790 8730 5790
+Connection ~ 8385 5790
+Wire Wire Line
+	8730 5790 8730 5840
+Wire Wire Line
+	8380 5790 8385 5790
+Wire Wire Line
+	8385 5690 8730 5690
+Connection ~ 8385 5690
+Wire Wire Line
+	8730 5690 8730 5590
+Wire Wire Line
+	8380 5690 8385 5690
+$Comp
+L Connector_Generic:Conn_01x03 J1
+U 1 1 602D9464
+P 8185 5790
+F 0 "J1" H 8260 5860 50  0000 L CNN
+F 1 "BioAmp Output" H 8255 5760 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 8185 5790 50  0001 C CNN
+F 3 "~" H 8185 5790 50  0001 C CNN
+	1    8185 5790
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:VCC #PWR05
+U 1 1 604A58B7
+P 8730 5590
+F 0 "#PWR05" H 8730 5440 50  0001 C CNN
+F 1 "VCC" H 8650 5740 50  0000 L CNN
+F 2 "" H 8730 5590 50  0001 C CNN
+F 3 "" H 8730 5590 50  0001 C CNN
+	1    8730 5590
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 604A536C
+P 8730 5840
+F 0 "#PWR06" H 8730 5590 50  0001 C CNN
+F 1 "GND" H 8730 5690 50  0000 C CNN
+F 2 "" H 8730 5840 50  0001 C CNN
+F 3 "" H 8730 5840 50  0001 C CNN
+	1    8730 5840
+	1    0    0    -1  
+$EndComp
+Text GLabel 8385 5890 2    50   Input ~ 0
+OUT
+Wire Notes Line
+	6970 6540 6970 980 
+Text Notes 4760 2030 0    59   ~ 0
+Removes high freqency noise.
+Text Notes 1030 3260 0    59   ~ 0
+Create solder joint on JP2 to narrow the Band Pass freqnecny range\nDefault: Wide input frequency band, use when recording EMG, EOG\nConfigured: Narrow input frequency band, use for EEG, EOG, and ECG
+Text Notes 7920 2380 0    59   ~ 0
+Bridge all three pads of the solder jumper to configure\nfor 2 Electrode operations instead of the 3 electrodes\nNote: 2 electrodes will give noisier output than 3 electrodes!
 $EndSCHEMATC
