@@ -9,9 +9,9 @@ BioAmp EXG Pill is a small (2.54 X 1.00 cm) and elegant Analog Front End (AFE) b
 
 ![Upside Down Labs BioAmp EXG Pill Assembled](graphics/images/BioAmp-EXG-Pill-Assembled.png)
 
-![Magic of Upside Down Labs BioAmp EXG Pill - front](graphics/docs/Magic-of-BioAmp EXG-Pill-v1.0b-front-lbg.png)
+![Magic of Upside Down Labs BioAmp EXG Pill - front](graphics/docs/Magic-of-BioAmp-EXG-Pill-v1.0b-front-lbg.png)
 
-![Magic of Upside Down Labs BioAmp EXG Pill - back](graphics/docs/Magic-of-BioAmp EXG-Pill-v1.0b-back-lbg.png)
+![Magic of Upside Down Labs BioAmp EXG Pill - back](graphics/docs/Magic-of-BioAmp-EXG-Pill-v1.0b-back-lbg.png)
 
 ## Software
 BioAmp EXG Pill works with any 5V microcontroller with an ADC like Arduino UNO/Nano or you can use dedicated 5v compatible ADC like ADS1115. To help with signal processing and cleaning you can use the included Arduino example sketches listed below.
