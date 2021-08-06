@@ -1,1 +1,0 @@
-kikit panelize grid --space 3 --gridsize 7 3 --tabwidth 4 --tabheight 2 --htabs 0 --vtabs 1 --mousebites 0.5 1 -0.3 --radius 1 --panelsize 100 100 --framecutH --fiducials 10 1.5 1 2 --tooling 5 1.5 1.5  BioAmp-EXG-Pill.kicad_pcb panel/BioAmp-EXG-Panel.kicad_pcb 
