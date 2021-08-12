@@ -29,6 +29,7 @@ BioAmp EXG Pill works with any 5V microcontroller with an ADC like Arduino UNO/N
 |9 | [HeartBeatDetection](software/HeartBeatDetection)| Standard deviation based heart beat detection algorithm.|
 |10 | [EyeBlinkDetection](software/EyeBlinkDetection)|EOG based eye blink detection.|
 |11 | [DrowsinessDetection](software/DrowsinessDetection)| Drowsiness detection using eye blink detection.|
+|12 | [ClawController](software/ClawController)| Servo claw controller |
 
 To-Do:
 
