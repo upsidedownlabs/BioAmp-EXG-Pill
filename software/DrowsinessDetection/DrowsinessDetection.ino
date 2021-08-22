@@ -1,6 +1,11 @@
-// Drowsiness Detection - EXG Pill
+// Drowsiness Detection - BioAmp EXG Pill
+// https://github.com/upsidedownlabs/BioAmp-EXG-Pill
 
-// Copyright (c) 2021 Upside Down Labs
+// Upside Down Labs invests time and resources providing this open source code,
+// please support Upside Down Labs and open-source hardware by purchasing
+// products from Upside Down Labs!
+
+// Copyright (c) 2021 Upside Down Labs - contact@upsidedownlabs.tech
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,24 +27,23 @@
 
 #include <math.h>
 
-#define SampleRate 75
-#define BaudRate 115200
-#define inputPin A0
-#define window 10
-#define Drowsiness_threshold 5000
-#define blink_indicator LED_BUILTIN
+#define SAMPLE_RATE 75
+#define BAUD_RATE 115200
+#define INPUT_PIN A0
+#define OUTPUT_PIN 13
+#define DATA_LENGTH 10
+#define DROWSINESS_THRESHOLD 5000
 
-int index = 0;
-int peak = 0;
-float EOGSignal;
+int data_index = 0;
+bool peak = false;
 
 void setup() {
   // Serial connection begin
-  Serial.begin(BaudRate);
+  Serial.begin(BAUD_RATE);
   
   // Setup Input & Output pin
-  pinMode(inputPin, INPUT);
-  pinMode(blink_indicator, OUTPUT);
+  pinMode(INPUT_PIN, INPUT);
+  pinMode(OUTPUT_PIN, OUTPUT);
 }
 
 void loop() {
@@ -60,22 +64,22 @@ void loop() {
 
   // Sample
   if(timer < 0){
-    timer += 1000000 / SampleRate;
+    timer += 1000000 / SAMPLE_RATE;
     
     // Sample and Nomalize input data (-1 to 1)
-    float sensorValue = analogRead(inputPin);
-    EOGSignal = EOGFilter(sensorValue)/512;
+    float sensor_value = analogRead(INPUT_PIN);
+    float signal = EOGFilter(sensor_value)/512;
     
     // Get peak
-    int peak = getPeak(EOGSignal);
+    peak = Getpeak(signal);
     
-    // Print sensorValue and peak
-    Serial.print(EOGSignal);
+    // Print sensor_value and peak
+    Serial.print(signal);
     Serial.print(",");
     Serial.println(peak);
     
     // Indicate on peak
-    digitalWrite(blink_indicator, peak);       
+    digitalWrite(OUTPUT_PIN, peak);       
 
     // Update blink timestamps
     present_blink= millis();
@@ -89,46 +93,46 @@ void loop() {
     Serial.println(blink_interval);
 
     // Drowsiness detection
-    if(blink_interval>= Drowsiness_threshold)
-      digitalWrite(blink_indicator,  HIGH);
+    if(blink_interval>= DROWSINESS_THRESHOLD)
+      digitalWrite(OUTPUT_PIN,  HIGH);
   }
 }
 
-int getPeak(float newSample){
+bool Getpeak(float new_sample){
   // Buffers for data, mean, and standard deviation
-  static float dataBuffer[window];
-  static float meanBuffer[window];
-  static float standardDeviationBuffer[window];
+  static float data_buffer[DATA_LENGTH];
+  static float mean_buffer[DATA_LENGTH];
+  static float standard_deviation_buffer[DATA_LENGTH];
   
   // Check for peak
-  if (newSample - meanBuffer[index] > (window*1.2) * standardDeviationBuffer[index]) {
-    dataBuffer[index] = newSample + dataBuffer[index];
-    peak = 1;
+  if (new_sample - mean_buffer[data_index] > (DATA_LENGTH*1.2) * standard_deviation_buffer[data_index]) {
+    data_buffer[data_index] = new_sample + data_buffer[data_index];
+    peak = true;
   } else {
-    dataBuffer[index] = newSample;
-    peak = 0;
+    data_buffer[data_index] = new_sample;
+    peak = false;
   }
 
   // Calculate mean
-  float sum = 0.0, mean, standardDeviation = 0.0;
-  for (int i = 0; i < window; ++i){
-    sum += dataBuffer[(index + i) % window];
+  float sum = 0.0, mean, standard_deviation = 0.0;
+  for (int i = 0; i < DATA_LENGTH; ++i){
+    sum += data_buffer[(data_index + i) % DATA_LENGTH];
   }
-  mean = sum/window;
+  mean = sum/DATA_LENGTH;
 
   // Calculate standard deviation
-  for (int i = 0; i < window; ++i){
-    standardDeviation += pow(dataBuffer[(i) % window] - mean, 2);
+  for (int i = 0; i < DATA_LENGTH; ++i){
+    standard_deviation += pow(data_buffer[(i) % DATA_LENGTH] - mean, 2);
   }
 
   // Update mean buffer
-  meanBuffer[index] = mean;
+  mean_buffer[data_index] = mean;
 
   // Update standard deviation buffer
-  standardDeviationBuffer[index] =  sqrt(standardDeviation/window);
+  standard_deviation_buffer[data_index] =  sqrt(standard_deviation/DATA_LENGTH);
 
-  // Update index
-  index = (index+1)%window;
+  // Update data_index
+  data_index = (data_index+1)%DATA_LENGTH;
 
   // Return peak
   return peak;
