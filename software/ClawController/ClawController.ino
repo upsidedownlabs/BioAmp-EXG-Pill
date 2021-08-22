@@ -1,6 +1,11 @@
-// Claw Controller - EXG Pill
+// Claw Controller - BioAmp EXG Pill
+// https://github.com/upsidedownlabs/BioAmp-EXG-Pill
 
-// Copyright (c) 2021 Upside Down Labs
+// Upside Down Labs invests time and resources providing this open source code,
+// please support Upside Down Labs and open-source hardware by purchasing
+// products from Upside Down Labs!
+
+// Copyright (c) 2021 Upside Down Labs - contact@upsidedownlabs.tech
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,26 +25,30 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include <Servo.h>
+#if defined(ESP32) 
+  #include <ESP32Servo.h>
+#else
+  #include <Servo.h>
+#endif
 
-#define SampleRate 500
-#define BaudRate 115200
-#define inputPin A0
-#define BufferSize 128
-#define ServoPin 9
-#define EMGmin 2
-#define EMGmax 10
+#define SAMPLE_RATE 500
+#define BAUD_RATE 115200
+#define INPUT_PIN A0
+#define BUFFER_SIZE 128
+#define SERVO_PIN 9
+#define EMG_MIN 2
+#define EMG_MAX 10
 
-int circularBuffer[BufferSize];
-int index, sum;
+int circular_buffer[BUFFER_SIZE];
+int data_index, sum;
 int flag=0;
 Servo servo;
 
 void setup() {
   // Serial connection begin
-  Serial.begin(BaudRate);
+  Serial.begin(BAUD_RATE);
   // Attach servo
-  servo.attach(ServoPin);
+  servo.attach(SERVO_PIN);
 }
 
 void loop() {
@@ -65,25 +74,25 @@ void loop() {
 
   // Sample and get envelop
   if(timer < 0) {
-    timer += 1000000 / SampleRate;
-    int sensorValue = analogRead(inputPin);
-    int EMGSignal = EMGFilter(sensorValue);
-    int envelop = getEnvelop(abs(EMGSignal));
-    int ServoPosition = map(envelop, EMGmin, EMGmax, 90, 180);
-    servo.write(ServoPosition);
-    Serial.print(EMGSignal);
+    timer += 1000000 / SAMPLE_RATE;
+    int sensor_value = analogRead(INPUT_PIN);
+    int signal = EMGFilter(sensor_value);
+    int envelop = getEnvelop(abs(signal));
+    int servo_position = map(envelop, EMG_MIN, EMG_MAX, 90, 180);
+    servo.write(servo_position);
+    Serial.print(signal);
     Serial.print(",");
-    Serial.println(ServoPosition);
+    Serial.println(servo_position);
   }
 }
 
 // Envelop detection algorithm
-int getEnvelop(int absEMG){
-  sum -= circularBuffer[index];
-  sum += absEMG;
-  circularBuffer[index] = absEMG;
-  index = (index + 1) % BufferSize;
-  return (sum/BufferSize) * 2;
+int getEnvelop(int abs_emg){
+  sum -= circular_buffer[data_index];
+  sum += abs_emg;
+  circular_buffer[data_index] = abs_emg;
+  data_index = (data_index + 1) % BUFFER_SIZE;
+  return (sum/BUFFER_SIZE) * 2;
 }
 
 // Band-Pass Butterworth IIR digital filter, generated using filter_gen.py.
