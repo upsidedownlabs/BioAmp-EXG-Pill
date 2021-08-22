@@ -1,6 +1,11 @@
-// EOG Filter - EXG Pill
+// EOG Filter - BioAmp EXG Pill
+// https://github.com/upsidedownlabs/BioAmp-EXG-Pill
 
-// Copyright (c) 2021 Upside Down Labs
+// Upside Down Labs invests time and resources providing this open source code,
+// please support Upside Down Labs and open-source hardware by purchasing
+// products from Upside Down Labs!
+
+// Copyright (c) 2021 Upside Down Labs - contact@upsidedownlabs.tech
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,14 +25,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#define SampleRate 75
-#define BaudRate 115200
-#define inputPin A0
+#define SAMPLE_RATE 75
+#define BAUD_RATE 115200
+#define INPUT_PIN A0
 
 
 void setup() {
 	// Serial connection begin
-	Serial.begin(BaudRate);
+	Serial.begin(BAUD_RATE);
 }
 
 void loop() {
@@ -43,10 +48,10 @@ void loop() {
 
 	// Sample
 	if(timer < 0){
-		timer += 1000000 / SampleRate;
-		float sensorValue = analogRead(inputPin);
-		float EOGSignal = EOGFilter(sensorValue);
-		Serial.println(EOGSignal);
+		timer += 1000000 / SAMPLE_RATE;
+		float sensor_value = analogRead(INPUT_PIN);
+		float signal = EOGFilter(sensor_value);
+		Serial.println(signal);
 	}
 }
 
