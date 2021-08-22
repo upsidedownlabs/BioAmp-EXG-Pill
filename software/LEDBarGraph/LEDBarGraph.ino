@@ -1,6 +1,11 @@
-// LED Bar Graph - EXG Pill
+// LED Bar Graph - BioAmp EXG Pill
+// https://github.com/upsidedownlabs/BioAmp-EXG-Pill
 
-// Copyright (c) 2021 Upside Down Labs
+// Upside Down Labs invests time and resources providing this open source code,
+// please support Upside Down Labs and open-source hardware by purchasing
+// products from Upside Down Labs!
+
+// Copyright (c) 2021 Upside Down Labs - contact@upsidedownlabs.tech
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,23 +25,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#define SampleRate 500
-#define BaudRate 115200
-#define inputPin A0
-#define BufferSize 128
+#define SAMPLE_RATE 500
+#define BAUD_RATE 115200
+#define INPUT_PIN A0
+#define BUFFER_SIZE 128
 
-int circularBuffer[BufferSize];
-int index, sum;
+int circular_buffer[BUFFER_SIZE];
+int data_index, sum;
 // LED pin numbers in-order
-int LEDs[] = {4, 5, 6, 7, 8, 9, 10, 11, 12};
-int TotalLEDs = sizeof(LEDs) / sizeof(LEDs[0]);
+int led_bar[] = {4, 5, 6, 7, 8, 9, 10, 11, 12};
+int total_leds = sizeof(led_bar) / sizeof(led_bar[0]);
 
 void setup() {
 	// Serial connection begin
-	Serial.begin(BaudRate);
-	// Initialize all the LEDs
-  	for (int i = 0; i < TotalLEDs; i++) {
-    	pinMode(LEDs[i], OUTPUT);
+	Serial.begin(BAUD_RATE);
+	// Initialize all the led_bar
+  	for (int i = 0; i < total_leds; i++) {
+    	pinMode(led_bar[i], OUTPUT);
   	}
 }
 
@@ -53,33 +58,33 @@ void loop() {
 
 	// Sample and get envelop
 	if(timer < 0) {
-		timer += 1000000 / SampleRate;
-		int sensorValue = analogRead(inputPin);
-		int EMGSignal = EMGFilter(sensorValue);
-		int envelop = getEnvelop(abs(EMGSignal));
+		timer += 1000000 / SAMPLE_RATE;
+		int sensor_value = analogRead(INPUT_PIN);
+		int signal = EMGFilter(sensor_value);
+		int envelop = getEnvelop(abs(signal));
 
 		// Update LED bar graph
-    	for(int i = 0; i<=TotalLEDs; i++){
+    	for(int i = 0; i<=total_leds; i++){
     		if(i>(envelop-1)){
-      			digitalWrite(LEDs[i], LOW);
+      			digitalWrite(led_bar[i], LOW);
     		} else {
-      			digitalWrite(LEDs[i], HIGH);
+      			digitalWrite(led_bar[i], HIGH);
     		}
   		}
 
-		Serial.print(EMGSignal);
+		Serial.print(signal);
 		Serial.print(",");
 		Serial.println(envelop);
 	}
 }
 
 // Envelop detection algorithm
-int getEnvelop(int absEMG){
-	sum -= circularBuffer[index];
-	sum += absEMG;
-	circularBuffer[index] = absEMG;
-	index = (index + 1) % BufferSize;
-	return (sum/BufferSize) * 2;
+int getEnvelop(int abs_emg){
+	sum -= circular_buffer[data_index];
+	sum += abs_emg;
+	circular_buffer[data_index] = abs_emg;
+	data_index = (data_index + 1) % BUFFER_SIZE;
+	return (sum/BUFFER_SIZE) * 2;
 }
 
 // Band-Pass Butterworth IIR digital filter, generated using filter_gen.py.
