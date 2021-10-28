@@ -1,0 +1,17 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# LOGO_UDLABS-udlabs
+#
+DEF LOGO_UDLABS-udlabs U 0 40 Y Y 1 F N
+F0 "U" 0 0 50 H V C CNN
+F1 "LOGO_UDLABS-udlabs" 0 0 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+T 0 20 120 50 0 0 0 "Upside Down Labs LOGO" Normal 0 C C
+S -450 180 500 60 0 0 0 N
+ENDDRAW
+ENDDEF
+#
+#End Library
