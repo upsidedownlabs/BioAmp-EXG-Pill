@@ -1,0 +1,1 @@
+This page will describe the applications of Bio-Amp-EXG-Pill.

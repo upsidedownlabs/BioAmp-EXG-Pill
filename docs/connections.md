@@ -1,0 +1,1 @@
+This page will decribe all connections and wiring daigram of Bio-Amp-EXG-pill.
