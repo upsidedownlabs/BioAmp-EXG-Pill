@@ -47,8 +47,8 @@
 // network settings
 #define HOSTNAME                  "Oscilloscope"      // define the name of your ESP32 here
 #define MACHINETYPE               "ESP32 NodeMCU"     // describe your hardware here
-#define DEFAULT_STA_SSID          ""                  // define default WiFi settings
-#define DEFAULT_STA_PASSWORD      ""
+#define DEFAULT_STA_SSID          "pablo"                  // define default WiFi settings
+#define DEFAULT_STA_PASSWORD      "Mot9323772083"
 #define DEFAULT_AP_SSID           "ESP32_AP"          // HOSTNAME 
 #define DEFAULT_AP_PASSWORD       "nopassword"        // "YOUR_AP_PASSWORD" // must be at leas 8 characters long
 #include "network.h"
