@@ -1,4 +1,8 @@
-[![Down Labs BioAmp EXG Pill Crowd Supply banner](graphics/gifs//Crowd-Supply-Banner.gif)](https://www.crowdsupply.com/upside-down-labs/bioamp-exg-pill)
+<br/>
+<br/>
+
+
+![Down Labs BioAmp EXG Pill Crowd Supply banner](https://raw.githubusercontent.com/Jamm02/BioAmp-EXG-Pill/main/graphics/gifs/Crowd-Supply-Banner.gif)
 
 
 ![Project Category](https://img.shields.io/badge/Category-Bioelectronics-gold) ![BioAmp EXG Pill Revision ](https://img.shields.io/badge/Version-1.0b-success) [![BioAmp EXG Pill intro video ](https://img.shields.io/badge/Intro-YouTube-red)](https://www.youtube.com/watch?v=-G3z9fvQnuw) [![BioAmp EXG Pill Crowd Supply page ](https://img.shields.io/badge/Support_Project-Crowd_Supply-00B5AC)](https://www.crowdsupply.com/upside-down-labs/bioamp-exg-pill) [![BioAmp EXG Pill Hackaday Page ](https://img.shields.io/badge/Documentation-hackaday.io-yellowgreen)](https://hackaday.io/project/178997-bioamp-exg-pill) [![BioAmp EXG Pill PCB ](https://img.shields.io/badge/PCB-OSH_Park-purple)](https://oshpark.com/shared_projects/OPELY7qK)
