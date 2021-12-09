@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel='shortcut icon' type='image/x-icon' sizes='192x192' href='/android-192-osc.png'>
+  <link rel='icon' type='image/png' sizes='192x192' href='/android-192-osc.png'>
+  <link rel='apple-touch-icon' sizes='180x180' href='/apple-180-osc.png'>
+  <meta http-equiv='content-type' content='text/html; charset=utf-8' />
+
+  <title>Esp32_oscilloscope</title>
+
+  <style>
+    hr {
+      border: 0;
+      border-top: 1px solid lightgray;
+      border-bottom: 1px solid lightgray
+    }
+
+    h1 {
+      font-family: verdana;
+      font-size: 40px;
+      text-align: center
+    }
+
+    div.d1 {
+      position: relative;
+      width: 100%;
+      height: 48px
+    }
+
+    div.d2 {
+      position: relative;
+      float: left;
+      width: 48%;
+      font-family: verdana;
+      font-size: 30px;
+      color: gray;
+    }
+
+    div.d3 {
+      position: relative;
+      float: left;
+      width: 13%;
+      font-family: verdana;
+      font-size: 30px;
+      color: black;
+    }
+
+    div.d4 {
+      position: relative;
+      float: left;
+      width: 39%;
+    }
+
+    div.d5 {
+      position: relative;
+      float: left;
+      width: 26%;
+    }
+
+    /* select control */
+    select {
+      padding: 8px 24px;
+      border-radius: 12px;
+      font-size: 16px;
+      color: black;
+      background-color: #eee;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      box-sizing: border-box;
+      border: 3px solid #ccc;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none
+    }
+
+    select::-ms-expand {
+      display: none
+    }
+
+    select:disabled {
+      background-color: #aaa
+    }
+
+    /* radio button control */
+    .container {
+      display: black;
+      position: relative;
+      padding-left: 222px;
+      margin-bottom: 14px;
+      cursor: pointer;
+      font-family: verdana;
+      font-size: 30px;
+      color: gray;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
+    }
+
+    .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 34px;
+      width: 34px;
+      background-color: #ddd;
+      border-radius: 50%
+    }
+
+    .container:hover input~.checkmark {
+      background-color: #ccc
+    }
+
+    .container input:checked~.checkmark {
+      background-color: #2196F3
+    }
+
+    .checkmark:after {
+      content: '';
+      position: absolute;
+      display: none
+    }
+
+    .container input:checked~.checkmark:after {
+      display: block
+    }
+
+    .container .checkmark:after {
+      top: 9px;
+      left: 9px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: white
+    }
+
+    .container input:disabled~.checkmark {
+      background-color: gray
+    }
+
+    .container input:disabled~.checkmark {
+      background-color: #aaa
+    }
+
+    /* slider control */
+    input[type='range'] {
+      -webkit-appearance: none;
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      width: 230px;
+      height: 28px;
+      margin: 0;
+      border: none;
+      padding: 4px 4px;
+      border-radius: 28px;
+      background: #2196F3;
+      outline: none
+    }
+
+    input[type='range']::-moz-range-track {
+      border: inherit;
+      background: transparent
+    }
+
+    input[type='range']::-ms-track {
+      border: inherit;
+      color: transparent;
+      background: transparent
+    }
+
+    input[type='range']::-ms-fill-lower input[type='range']::-ms-fill-upper {
+      background: transparent
+    }
+
+    input[type='range']::-ms-tooltip {
+      display: none
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 38px;
+      height: 26px;
+      border: none;
+      border-radius: 13px;
+      background-color: white
+    }
+
+    input[type='range']::-moz-range-thumb {
+      width: 38px;
+      height: 26px;
+      border: none;
+      border-radius: 13px;
+      background-color: white
+    }
+
+    input[type='range']::-ms-thumb {
+      width: 38px;
+      height: 26px;
+      border-radius: 13px;
+      border: 0;
+      background-color: white
+    }
+
+    input:disabled+.slider {
+      background-color: #aaa
+    }
+
+    input[type='range']:disabled {
+      background: #aaa
+    }
+
+    /* switch control */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s
+    }
+
+    .slider:before {
+      position: absolute;
+      content: '';
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s
+    }
+
+    input:checked+.slider {
+      background-color: #2196F3
+    }
+
+    input:focus+.slider {
+      box-shadow: 0 0 1px #2196F3
+    }
+
+    input:checked+.slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px)
+    }
+
+    .switch input {
+      display: none
+    }
+
+    .slider.round {
+      border-radius: 34px
+    }
+
+    .slider.round:before {
+      border-radius: 50%
+    }
+
+    input:disabled+.slider {
+      background-color: #aaa
+    }
+
+    /* button control */
+    .button {
+      padding: 10px 15px;
+      font-size: 22px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 1px 1px #ccc;
+      position: relative;
+      top: 0px;
+      height: 42px
+    }
+
+    button:disabled {
+      background-color: #aaa
+    }
+
+    button:disabled:hover {
+      background-color: #aaa
+    }
+
+    /* blue button */
+    .button1 {
+      background-color: #2196F3
+    }
+
+    .button1:hover {
+      background-color: #0961aa
+    }
+
+    .button1:active {
+      background-color: #0961aa;
+      transform: translateY(3px)
+    }
+
+    /* green button */
+    .button2 {
+      background-color: green
+    }
+
+    .button2:hover {
+      background-color: darkgreen
+    }
+
+    .button2:active {
+      background-color: darkgreen;
+      transform: translateY(3px)
+    }
+
+    /* red button */
+    .button3 {
+      background-color: red
+    }
+
+    .button3:hover {
+      background-color: darkred
+    }
+
+    .button3:active {
+      background-color: darkred;
+      transform: translateY(3px)
+    }
+  </style>
+
+  <script type='text/javascript'>
+    // from: https://www.w3schools.com/js/js_cookies.asp
+    function getCookie(cname) {
+      var name = cname + '=';
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return '';
+    }
+    // from: https://www.w3schools.com/js/js_cookies.asp
+    function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      var expires = 'expires=' + d.toUTCString();
+      document.cookie = cname + '=' + cvalue + ';' + expires + ';' // path=/';  we wont use path - cookies are used in this page only
+    }
+  </script>
+
+</head>
+
+<body>
+  <br>
+  <h1>EXG Pill Visualizer</h1>
+
+  <hr />
+  <div class='d1' style='height: 50px;'>
+    <div class='d2'>&nbsp;Prim. (and sec.) ESP32 GPIOs</div>
+    <div class='d3' style='color: gray;'>
+      <select id='gpio1'>
+        <option value='0'>GPIO 0</option>
+        <option value='2' selected='selected'>GPIO 2</option>
+        <option value='4'>GPIO 4</option>
+        <option value='5'>GPIO 5</option>
+        <option value='12'>GPIO 12</option>
+        <option value='14'>GPIO 14</option>
+        <option value='15'>GPIO 15</option>
+        <option value='25'>GPIO 25</option>
+        <option value='26'>GPIO 26</option>
+        <option value='27'>GPIO 27</option>
+        <option value='32'>GPIO 32</option>
+        <option value='33'>GPIO 33</option>
+        <option value='34'>GPIO 34</option>
+        <option value='35'>GPIO 35</option>
+        <option value='36'>GPIO 36</option>
+        <option value='39'>GPIO 39</option>
+      </select>
+    </div>
+    <div class='d3' style='color: gray;'>
+      <select id='gpio2'>
+        <option value='40' selected='selected'></option>
+        <option value='0'>GPIO 0</option>
+        <option value='2'>GPIO 2</option>
+        <option value='4'>GPIO 4</option>
+        <option value='5'>GPIO 5</option>
+        <option value='12'>GPIO 12</option>
+        <option value='14'>GPIO 14</option>
+        <option value='15'>GPIO 15</option>
+        <option value='25'>GPIO 25</option>
+        <option value='26'>GPIO 26</option>
+        <option value='27'>GPIO 27</option>
+        <option value='32'>GPIO 32</option>
+        <option value='33'>GPIO 33</option>
+        <option value='34'>GPIO 34</option>
+        <option value='35'>GPIO 35</option>
+        <option value='36'>GPIO 36</option>
+        <option value='39'>GPIO 39</option>
+      </select>
+    </div>
+  </div>
+
+
+  <div class='d1' style="display: none;">
+    <div class='d2'>&nbsp;Do analogRead (GPIO)</div>
+    <div class='d3'>
+      <label class='container'>&nbsp;<input type='radio' name='radio1' id='analog' checked='checked'><span
+          class='checkmark'></span></label>
+    </div>
+  </div>
+
+  <div class='d1'>
+    <div class='d3' id='sensitivityLabel'></div>
+    <div class='d4'>
+    </div>
+  </div>
+
+
+  <div class='d1' style="display: none;">
+    <div class='d2'>&nbsp;Horizontal frequency</div>
+    <div class='d3' id='frequencyLabel'>20 KHz</div>
+    <div class='d4'>
+
+    </div>
+  </div>
+
+  <div class='d1' style="display: none;">
+    <div class='d2'>&nbsp;Connect samples with lines</div>
+    <div class='d3'>
+      <label class='switch'><input type='checkbox' checked id='lines' checked='checked'>
+    </div></label>
+  </div>
+  </div>
+
+  <div class='d1' ; style='height: 76px;'>
+    <div class='d2'>&nbsp;Remember settings<br>&nbsp;<small><small>Some essential cookies will be used for
+          this.</small></small></div>
+    <div class='d3'>
+      <label class='switch'><input type='checkbox' id='remember' onclick="
+          saveSettings ();
+        ">
+        <div class='slider round'></div>
+      </label>
+    </div>
+    <div class='d3'><button class='button button2' id='startButton' onclick="
+        saveSettings ();
+        drawBackgroundAndCalculateParameters ();
+        enableDisableControls (true);
+        startOscilloscope ();
+      ">&nbsp;START&nbsp;</button></div>
+    <div class='d5'><button class='button button3' id='stopButton' disabled onclick="
+        stopOscilloscope ();
+        enableDisableControls (false);
+      ">&nbsp;STOP&nbsp;</button></div>
+  </div>
+
+  <hr />
+  <br>
+
+  <canvas id='oscilloscope' width='968' height='512' ;></canvas></div>
+
+  <script type='text/javascript'>
+
+    // initialization
+
+    function sensitivityLabelFromSensitivitySlider(value) {
+      return '100 %';
+    }
+
+    function frequencyLabelFromFrequencySlider(value) {
+      return '20 Hz';
+    }
+
+    // console.log (document.cookie);
+
+    var v;
+    v = getCookie('gpio1'); if (v != '') document.getElementById('gpio1').value = v;
+    v = getCookie('gpio2'); if (v != '') document.getElementById('gpio2').value = v;
+    v = getCookie('analog'); if (v == 'true') document.getElementById('analog').checked = true;
+    v = getCookie('frequency'); if (v != '') { document.getElementById('frequency').value = v; }
+    v = getCookie('lines'); if (v == 'false') document.getElementById('lines').checked = false;
+    v = getCookie('remember'); if (v == 'true') document.getElementById('remember').checked = true;
+
+    enableDisableControls(false);
+
+    // save settings into cookies
+    function saveSettings() {
+      if (document.getElementById('remember').checked) {
+        // set cookies for 10 years
+        setCookie('gpio1', document.getElementById('gpio1').value, 3652);
+        setCookie('gpio2', document.getElementById('gpio2').value, 3652);
+        setCookie('analog', document.getElementById('analog').checked, 3652);
+        setCookie('frequency', document.getElementById('frequency').value, 3652);
+        setCookie('lines', document.getElementById('lines').checked, 3652);
+        setCookie('remember', document.getElementById('remember').checked, 3652);
+      } else {
+        // delete cookies
+        setCookie('gpio1', '', -1);
+        setCookie('gpio2', '', -1);
+        setCookie('analog', '', -1);
+        setCookie('frequency', '', -1);
+        setCookie('lines', '', -1);
+        setCookie('remember', '', -1);
+      }
+    }
+
+    var webSocket = null;
+
+    function stopOscilloscope() {
+      if (webSocket != null) {
+        webSocket.send('stop');
+        webSocket.close();
+        webSocket = null;
+      }
+    }
+
+    function startOscilloscope() {
+      stopOscilloscope();
+
+      if ('WebSocket' in window) {
+        // open a web socket
+        var ws = new WebSocket('ws://' + self.location.host + '/runOscilloscope');
+        webSocket = ws;
+
+        ws.onopen = function () {
+          // first send endian identification Uint16 so ESP32 server will know the client architecture
+          endianArray = new Uint16Array(1); endianArray[0] = 0xAABB;
+          ws.send(endianArray);
+
+          // then send start command with sampling parameters
+          var startCommand = 'start ' + (document.getElementById('analog').checked ? 'analog' : 'digital') + ' sampling on GPIO ' + document.getElementById('gpio1').value + (document.getElementById('gpio2').value == 40 ? '' : ', ' + document.getElementById('gpio2').value) + ' every ';
+
+          // horizontal frequency = 20 Hz, whole width = 0,05 s, 40 samples per screen, 1.250 us per sample, server refreshes every 0,05 s, all 40 samples will be displyed at once
+          startCommand += '25 ms screen width = 5000 ms'; // sampling: 800 Hz, horizontal frequency: 20 Hz, max 40 samples per screen
+          ws.send(startCommand);
+        };
+
+        ws.onmessage = function (evt) {
+          if (typeof (evt.data) === 'string' || evt.data instanceof String) { // UTF-8 formatted string - error message from ESP32 server
+            alert('Error message from server: ' + evt.data); // oscilloscope code reporting error (synatx error, ...)
+            enableDisableControls(false);
+          }
+          if (evt.data instanceof Blob) { // binary data - array of samples
+            // receive binary data as blob and then convert it into array buffer and draw oscilloscope signal
+            var myInt16Array = null;
+            var myArrayBuffer = null;
+            var myFileReader = new FileReader();
+            myFileReader.onload = function (event) {
+              myArrayBuffer = event.target.result;
+              myInt16Array = new Int16Array(myArrayBuffer);
+              console.log (myInt16Array);
+              drawSignal(myInt16Array, 0, myInt16Array.length - 1);
+            };
+            myFileReader.readAsArrayBuffer(evt.data);
+          }
+        };
+
+        /*
+        ws.onclose = function () {
+          // websocket is closed.
+          console.log ('WebSocket closed.');
+          enableDisableControls (false);
+        };
+        */
+
+        ws.onerror = function (event) {
+          ws.close();
+          alert('WebSocket error: ' + event);
+          enableDisableControls(false);
+        };
+
+      } else {
+        alert('WebSockets are not supported by your browser.');
+      }
+    }
+
+    // drawing parameters
+
+    var screenWidthTime;    // oscilloscope screen width in time units
+    var restartDrawingSignal; // used for drawing the signal
+    var screenTimeOffset;   // used for drawing the signal
+
+    var xOffset;
+    var xScale;
+    var yOffset;
+    var yScale;
+    var yLast;
+
+    function drawBackgroundAndCalculateParameters() {
+
+      var x;    // x coordinate
+      var y;    // y coordinate
+      var i;    // x coordinate in canvas units
+      var j;    // y coordinate in canas units
+      var yGridTick;
+      var gridTop;  // y value at the top of the grid
+
+      restartDrawingSignal = true;  // drawing parameter - for later use
+      screenTimeOffset = 0;   // drawing parameter - for later use
+
+      var canvas = document.getElementById('oscilloscope');
+      var ctx = canvas.getContext('2d');
+
+      // colour background
+      ctx.fillStyle = '#031c30';
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(canvas.width - 1, 0);
+      ctx.lineTo(canvas.width - 1, canvas.height - 1);
+      ctx.lineTo(0, canvas.height - 1);
+      ctx.fill();
+
+      // calculate drawing parametes and draw grid and scale
+      ctx.strokeStyle = '#2196F3';
+      ctx.lineWidth = 3;
+      ctx.font = '16px Verdana';
+
+      xOffset = 50;
+
+      // draw analog signal grid
+
+      // signal sensitivity
+
+      yScale = -(canvas.height - 60) / 4096;
+      yGridTick = 1000;
+      yScale *= 1;
+      yOffset = canvas.height - 50
+      gridTop = yOffset + yScale * 4095 + 5;
+
+      // draw horizontal grid and scale
+
+      for (y = 0; y < 4096; y += yGridTick) {
+        j = yOffset + yScale * y;
+        ctx.strokeText(y.toString(), 5, j + 5);
+        ctx.beginPath();
+        ctx.moveTo(xOffset - 5, j);
+        ctx.lineTo(canvas.width, j);
+        ctx.stroke();
+      }
+
+      // draw digital signal grid
+
+
+
+      // draw vertical grid and scale
+
+      screenWidthTime = 500000; // (us) horizontal frequency = 20 Hz, whole width = 0,05 s, grid tick width = 0,005 s
+      xGridTick = screenWidthTime / 1000;
+      xScale = ((canvas.width - xOffset) * 100) / screenWidthTime;
+      xLabel = '0.5 sec';
+
+
+
+
+      for (x = 0; x < screenWidthTime; x += xGridTick) {
+        i = xOffset + xScale * x;
+        ctx.strokeText(xLabel, i + 25, yOffset + 25);
+        ctx.beginPath();
+        ctx.moveTo(i, yOffset + 5);
+        ctx.lineTo(i, gridTop);
+        ctx.stroke();
+      }
+    }
+
+    drawBackgroundAndCalculateParameters();
+
+    var lastI;  // last drawn sample (time)
+    var lastJ1; // signal 1
+    var lastJ2; // signal 2
+
+    function drawSignal(myInt16Array, startInd, endInd) {
+      if (startInd > endInd) return;
+
+      // find dummy sample (the one with value of -1) which will tells javascript cliento to start drawing from beginning of the screen
+      for (var ind = startInd; ind <= endInd; ind += 3) {
+        if (myInt16Array[ind] == -1) { // if signal value = -1 (dummy value)
+          drawSignal(myInt16Array, startInd, ind - 3); // upt to peviuos sample, there are 3 16 bit words in each sample
+          drawBackgroundAndCalculateParameters();
+          drawSignal(myInt16Array, ind + 3, endInd); // from next sample on, there are 3 16 bit words in each sample
+          return;
+        }
+      }
+
+      var canvas = document.getElementById('oscilloscope');
+      var ctx = canvas.getContext('2d');
+
+      var analog = document.getElementById('analog').checked;
+      var lines = document.getElementById('lines').checked;
+
+
+      ctx.lineWidth = 5;
+
+      for (var ind = startInd; ind < endInd; ind += 3) { // there are 3 16 bit words in each sample
+
+        // calculate sample position
+
+        screenTimeOffset += myInt16Array[ind + 2];
+        i = xOffset + xScale * screenTimeOffset;   // time
+        j1 = yOffset + yScale * myInt16Array[ind]; // signal 1
+        j2 = myInt16Array[ind + 1] >= 0 ? yOffset + yScale * myInt16Array[ind + 1] : -1; // signal 2
+
+        // lines
+        if (lines) {
+          if (restartDrawingSignal) {
+            restartDrawingSignal = false;
+          } else {
+            if (analog) { // analog
+              
+              // signal 1
+              ctx.strokeStyle = '#ffbf80';
+              ctx.beginPath();
+              ctx.moveTo(lastI, lastJ1);
+              ctx.lineTo(i, j1);
+              ctx.stroke();
+            }
+          }
+
+        }
+
+        lastI = i;
+        lastJ1 = j1;
+        lastJ2 = j2;
+      }
+
+    }
+
+    // eneable and disable controls
+
+    function enableDisableControls(workMode) {
+      if (workMode) {
+        // disable GPIO, analog/digital, trigger, frequency and start, enable stop
+        document.getElementById('gpio1').disabled = true;
+        document.getElementById('gpio2').disabled = true;
+        document.getElementById('analog').disabled = true;
+        document.getElementById('frequencyLabel').style.color = 'gray';
+        document.getElementById('startButton').disabled = true;
+        document.getElementById('stopButton').disabled = false;
+      } else {
+        // enable GPIO, analog/digital, trigger, frequency and start, disable stop
+        document.getElementById('gpio1').disabled = false;
+        document.getElementById('gpio2').disabled = false;
+        document.getElementById('analog').disabled = false;
+        document.getElementById('frequencyLabel').style.color = 'black';
+        document.getElementById('startButton').disabled = false;
+        document.getElementById('stopButton').disabled = true;
+      }
+    }
+
+  </script>
+</body>
+
+</html>
