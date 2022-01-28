@@ -1,4 +1,8 @@
-[![Down Labs BioAmp EXG Pill Crowd Supply banner](graphics/gifs//Crowd-Supply-Banner.gif)](https://www.crowdsupply.com/upside-down-labs/bioamp-exg-pill)
+<br/>
+<br/>
+
+
+![Down Labs BioAmp EXG Pill Crowd Supply banner](https://raw.githubusercontent.com/Jamm02/BioAmp-EXG-Pill/main/graphics/gifs/Crowd-Supply-Banner.gif)
 
 
 ![Project Category](https://img.shields.io/badge/Category-Bioelectronics-gold) ![BioAmp EXG Pill Revision ](https://img.shields.io/badge/Version-1.0b-success) [![BioAmp EXG Pill intro video ](https://img.shields.io/badge/Intro-YouTube-red)](https://www.youtube.com/watch?v=-G3z9fvQnuw) [![BioAmp EXG Pill Crowd Supply page ](https://img.shields.io/badge/Support_Project-Crowd_Supply-00B5AC)](https://www.crowdsupply.com/upside-down-labs/bioamp-exg-pill) [![BioAmp EXG Pill Hackaday Page ](https://img.shields.io/badge/Documentation-hackaday.io-yellowgreen)](https://hackaday.io/project/178997-bioamp-exg-pill) [![BioAmp EXG Pill PCB ](https://img.shields.io/badge/PCB-OSH_Park-purple)](https://oshpark.com/shared_projects/OPELY7qK)
@@ -7,23 +11,23 @@
 BioAmp EXG Pill is a small (2.54 X 1.00 cm) and elegant Analog Front End (AFE) board for BioPotential signal acquisition that you can use with any 5v Micro Controller Unit (MCU) with an ADC. It is capable of recording publication grade BioPotential signals like ECG, EMG, EOG, and EEG without the inclusion of any dedicated Hardware/Software filter, see [BioAmp EXG Pill v0.7 intro video](https://www.youtube.com/watch?v=-G3z9fvQnuw) for more info. The v1.0 of BioAmp EXG pill provides even more flexibilty with configuration option for Gain, BandPass, Filter, and Electrodes.
 
 
-![Upside Down Labs BioAmp EXG Pill Assembled](graphics/images/BioAmp-EXG-Pill-Assembled.png)
+![Upside Down Labs BioAmp EXG Pill Assembled](https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/images/BioAmp-EXG-Pill-Assembled.png)
 
 | Connection      |  Configuration |
 | :-------------------------: | :-------------------------: |
-| ![BioAmp EXG Pill - Connection](graphics/docs/Magic-of-BioAmp-EXG-Pill-v1.0b-front-lbg.png)  | ![BioAmp EXG Pill - Configuration](graphics/docs/Magic-of-BioAmp-EXG-Pill-v1.0b-back-lbg.png)|
+| ![BioAmp EXG Pill - Connection](https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/docs/Magic-of-BioAmp-EXG-Pill-v1.0b-front-lbg.png)  | ![BioAmp EXG Pill - Configuration](https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/docs/Magic-of-BioAmp-EXG-Pill-v1.0b-back-lbg.png)|
 
 | Basic Arduino Circuit           |  Electromyography (EMG) |
 | :-------------------------: | :-------------------------: |
-| ![BioAmp EXG Pill - Basic Circuit](graphics/circuits/Basic-Circuit.png)  | ![BioAmp EXG Pill - Electromyography (EMG)](graphics/circuits/Electromyography.png)|
+| ![BioAmp EXG Pill - Basic Circuit](https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/circuits/Basic-Circuit.png)  | ![BioAmp EXG Pill - Electromyography (EMG)](https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/circuits/Electromyography.png)|
 
 | Electrooculography (EOG) Horizontal           |  Electrooculography (EOG) Vertical |
 | :-------------------------: | :-------------------------: |
-| ![BioAmp EXG Pill - Electrooculography (EOG) Horizontal](graphics/circuits/Electrooculography-Horizontal.png)  | ![BioAmp EXG Pill - Electrooculography (EOG) Vertical](graphics/circuits/Electrooculography-Vertical.png)|
+| ![BioAmp EXG Pill - Electrooculography (EOG) Horizontal](https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/circuits/Electrooculography-Horizontal.png)  | ![BioAmp EXG Pill - Electrooculography (EOG) Vertical](https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/circuits/Electrooculography-Vertical.png)|
 
 | Electrocardiography (ECG) Lead 1           |  Electroencephalography (EEG) |
 | :-------------------------: | :-------------------------: |
-| ![BioAmp EXG Pill - Electrocardiography (ECG) Lead 1](graphics/circuits/Electrocardiography-Lead1.png)  | ![BioAmp EXG Pill - Electroencephalography (EEG)](graphics/circuits/Electroencephalography.png)|
+| ![BioAmp EXG Pill - Electrocardiography (ECG) Lead 1](https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/circuits/Electrocardiography-Lead1.png)  | ![BioAmp EXG Pill - Electroencephalography (EEG)](https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/circuits/Electroencephalography.png)|
 
 
 
@@ -62,13 +66,13 @@ BioAmp EXG Pill has been created using KiCad and all the design files can be fou
 
 | PCB Front           |  PCB Back |
 | :-------------------------: | :-------------------------: |
-| ![Upside Down Labs BioAmp EXG Pill front](graphics/board/v1.0b/BioAmp-EXG-Pill-v1.0b-front-black-enig.png)  | ![Upside Down Labs BioAmp EXG Pill back](graphics/board/v1.0b/BioAmp-EXG-Pill-v1.0b-back-black-enig.png) |
+| ![Upside Down Labs BioAmp EXG Pill front](https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/board/v1.0b/BioAmp-EXG-Pill-v1.0b-front-black-enig.png)  | ![Upside Down Labs BioAmp EXG Pill back](https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/board/v1.0b/BioAmp-EXG-Pill-v1.0b-back-black-enig.png) |
 
-![Upside Down Labs BioAmp EXG Pill front annotated](graphics/board/v1.0b/BioAmp-EXG-Pill-v1.0b-front-black-enig-annotated.png)
+![Upside Down Labs BioAmp EXG Pill front annotated](https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/board/v1.0b/BioAmp-EXG-Pill-v1.0b-front-black-enig-annotated.png)
 
 | Dimensions            |  Schematic  |
 | :-------------------------: | :-------------------------: |
-| ![Upside Down Labs BioAmp EXG Pill dimensions](graphics/board/v1.0b/BioAmp-EXG-Pill-v1.0b-dimensions.png)  | ![Upside Down Labs BioAmp EXG Pill schematic](graphics/docs/BioAmp-EXG-Pill-v1.0b-schematic.png) |
+| ![Upside Down Labs BioAmp EXG Pill dimensions](https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/board/v1.0b/BioAmp-EXG-Pill-v1.0b-dimensions.png)  | ![Upside Down Labs BioAmp EXG Pill schematic](https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/docs/BioAmp-EXG-Pill-v1.0b-schematic.png) |
 
 
 ## License
