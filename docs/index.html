@@ -1,231 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>docsify</title>
-    <link rel="icon" href="_media/favicon.ico" />
-    <meta
-      name="google-site-verification"
-      content="6t0LoIeFksrjF4c9sqUEsVXiQNxLp2hgoqo0KryT-sE"
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta
-      name="keywords"
-      content="doc,docs,documentation,gitbook,creator,generator,github,jekyll,github-pages"
-    />
-    <meta name="description" content="A magical documentation generator." />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+      content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no"
     />
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
-      title="vue"
+    <meta
+      name="description"
+      content="Documentation For BioAmp-EXG-Pill"
     />
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css"
-      title="dark"
-      disabled
-    />
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/buble.css"
-      title="buble"
-      disabled
-    />
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/pure.css"
-      title="pure"
-      disabled
-    />
-    <style>
-      nav.app-nav li ul {
-        min-width: 100px;
-      }
+    <title>BioAmp-EXG-Pill</title>
 
-      #carbonads {
-        box-shadow: none !important;
-        width: auto !important;
+    <!-- 1. Theme -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/docsify-themeable/dist/css/theme-simple.css"
+    />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/docsify-themeable/dist/css/theme-simple-dark.css"> -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/docsify-themeable/dist/css/theme-defaults.css"> -->
+
+    <!-- 2. PrismJS Themes -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/prism-github/prism-github.css"> -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/prism-theme-one-dark/prism-onedark.css"> -->
+
+    <!-- 3. Custom Theme Properties -->
+    <style>
+      :root {
+        /* Reduce the font size */
+        /* --base-font-size: 14px; */
+
+        /* Change the theme color hue (0-360) */
+        /* --theme-hue: 325; */
+
+        /* Add sidebar navigation bullets */
+        /* --sidebar-nav-link-before-content-l1: "😀"; */
+        /* --sidebar-nav-link-before-content-l2: "💩"; */
       }
     </style>
   </head>
 
   <body>
-    <div id="app">Loading ...</div>
-    <script src="//cdn.jsdelivr.net/npm/docsify-plugin-carbon@1/index.js"></script>
+    <div id="app"></div>
+
     <script>
-      // Set html "lang" attribute based on URL
-      var lang = location.hash.match(/#\/(de-de|es|ru-ru|zh-cn)\//);
-
-      if (lang) {
-        document.documentElement.setAttribute('lang', lang[1]);
-      }
-
-      // Docsify configuration
+      // 4. Docsify Configuration
       window.$docsify = {
-        alias: {
-          '.*?/awesome':
-            'https://raw.githubusercontent.com/docsifyjs/awesome-docsify/master/README.md',
-          '.*?/changelog':
-            'https://raw.githubusercontent.com/docsifyjs/docsify/master/CHANGELOG.md',
-          '/.*/_navbar.md': '/_navbar.md',
-          '/es/(.*)':
-            'https://raw.githubusercontent.com/docsifyjs/docs-es/master/$1',
-          '/de-de/(.*)':
-            'https://raw.githubusercontent.com/docsifyjs/docs-de/master/$1',
-          '/ru-ru/(.*)':
-            'https://raw.githubusercontent.com/docsifyjs/docs-ru/master/$1',
-          '/zh-cn/(.*)':
-            'https://cdn.jsdelivr.net/gh/docsifyjs/docs-zh@master/$1',
-        },
+        name: "BioAmp-EXG-Pill",
+        repo: "https://github.com/upsidedownlabs/BioAmp-EXG-Pill",
+        coverpage: "_coverpage.md",
+        homepage: "README.md",
+        loadSidebar: "_sidebar.md",
         auto2top: true,
-        coverpage: true,
-        executeScript: true,
-        loadSidebar: true,
-        loadNavbar: true,
-        mergeNavbar: true,
-        maxLevel: 4,
-        subMaxLevel: 2,
-        ga: 'UA-106147152-1',
-        matomo: {
-          host: '//matomo.thunderwave.de',
-          id: 6,
-        },
-        
-        search: {
-          noData: {
-            '/es/': '¡No hay resultados!',
-            '/de-de/': 'Keine Ergebnisse!',
-            '/ru-ru/': 'Никаких результатов!',
-            '/zh-cn/': '没有结果!',
-            '/': 'No results!',
-          },
-          paths: 'auto',
-          placeholder: {
-            '/es/': 'Buscar',
-            '/de-de/': 'Suche',
-            '/ru-ru/': 'Поиск',
-            '/zh-cn/': '搜索',
-            '/': 'Search',
-          },
-          pathNamespaces: ['/es', '/de-de', '/ru-ru', '/zh-cn']
-        },
-        vueComponents: {
-          'button-counter': {
-            template:
-              '<button @click="count += 1">You clicked me {{ count }} times</button>',
-            data: function() {
-              return {
-                count: 0,
-              };
-            },
-          },
-        },
-        vueGlobalOptions: {
-          data: function() {
-            return {
-              count: 0,
-              message: 'Hello, World!',
-              // Fake API response
-              images: [
-                { title: 'Image 1', url: 'https://picsum.photos/150?random=1' },
-                { title: 'Image 2', url: 'https://picsum.photos/150?random=2' },
-                { title: 'Image 3', url: 'https://picsum.photos/150?random=3' },
-              ],
-            };
-          },
-          computed: {
-            timeOfDay: function() {
-              const date = new Date();
-              const hours = date.getHours();
+        maxLevel: 3,
+        subMaxLevel: 3,
 
-              if (hours < 12) {
-                return 'morning';
-              } else if (hours < 18) {
-                return 'afternoon';
-              } else {
-                return 'evening';
-              }
-            },
-          },
-          methods: {
-            hello: function() {
-              alert(this.message);
-            },
-          },
-        },
-        vueMounts: {
-          '#counter': {
-            data: function() {
-              return {
-                count: 0,
-              };
-            },
-          },
-        },
-        plugins: [
-
-          function(hook, vm) {
-            hook.beforeEach(function(html) {
-              if (/githubusercontent\.com/.test(vm.route.file)) {
-                url = vm.route.file
-                  .replace('raw.githubusercontent.com', 'github.com')
-                  .replace(/\/master/, '/blob/master');
-              } else if (/jsdelivr\.net/.test(vm.route.file)) {
-                url = vm.route.file
-                  .replace('cdn.jsdelivr.net/gh', 'github.com')
-                  .replace('@master', '/blob/master');
-              } else {
-                url =
-                  'https://github.com/upsidedownlabs/BioAmp-EXG-Pill/blob/main/docs/' +
-                  vm.route.file;
-              }
-              var editHtml = '[:memo: Edit Document](' + url + ')\n';
-              return (
-                editHtml +
-                html +
-                '\n\n----\n\n' +
-                '<a href="https://docsify.js.org" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;"></a>'
-              );
-            }),
-              hook.afterEach(function(html) {
-                if (vm.route.path === '/') {
-                  return html;
-                }
-                return (
-                  html +
-                  '<br/> Buy on Crowd Supply <br/> <a href="https://www.crowdsupply.com/upside-down-labs/bioamp-exg-pill" target="_blank"><img src="https://www.crowdsupply.com/_teal/images/crowd-supply-logo-dark.svg" alt="CrowdSupply" width="100" height="64"></a>'
-                );
-              });
-          },
-        ],
+        // 5. docsify-themeable
+        themeable: {
+          // readyTransition : false,
+          // responsiveTables: false
+        }
       };
     </script>
-    <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-markdown.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-nginx.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
-    <script>
-      (function() {
-        function loadJS(src, attrs) {
-          document.write(
-            '<script src="' + src + '" ' + (attrs || '') + '><\/script>'
-          );
-        }
 
-        // Public site only
-        if (/docsify/.test(location.host)) {
-          loadJS('//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/ga.min.js');
-          loadJS('//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/matomo.min.js');
-        }
-      })();
-    </script>
-    <script src="//cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
-    <!-- <script src="//cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script> -->
+    <!-- Required: docsify + docsify-themeable -->
+    <script src="https://unpkg.com/docsify/lib/docsify.min.js"></script>
+    <script src="https://unpkg.com/docsify-themeable"></script>
+
+    <!-- 6. Docsify Plugins -->
+    <script src="https://unpkg.com/docsify/lib/plugins/search.js"></script>
+    <!-- <script src="https://unpkg.com/docsify-copy-code"></script> -->
+    <!-- <script src="https://unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script> -->
   </body>
 </html>
