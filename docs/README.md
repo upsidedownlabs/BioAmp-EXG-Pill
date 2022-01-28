@@ -2,7 +2,7 @@
 <br/>
 
 
-![Down Labs BioAmp EXG Pill Crowd Supply banner](https://raw.githubusercontent.com/Jamm02/BioAmp-EXG-Pill/main/graphics/gifs/Crowd-Supply-Banner.gif)
+![Down Labs BioAmp EXG Pill Crowd Supply banner](https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/gifs/Crowd-Supply-Banner.gif)
 
 
 ![Project Category](https://img.shields.io/badge/Category-Bioelectronics-gold) ![BioAmp EXG Pill Revision ](https://img.shields.io/badge/Version-1.0b-success) [![BioAmp EXG Pill intro video ](https://img.shields.io/badge/Intro-YouTube-red)](https://www.youtube.com/watch?v=-G3z9fvQnuw) [![BioAmp EXG Pill Crowd Supply page ](https://img.shields.io/badge/Support_Project-Crowd_Supply-00B5AC)](https://www.crowdsupply.com/upside-down-labs/bioamp-exg-pill) [![BioAmp EXG Pill Hackaday Page ](https://img.shields.io/badge/Documentation-hackaday.io-yellowgreen)](https://hackaday.io/project/178997-bioamp-exg-pill) [![BioAmp EXG Pill PCB ](https://img.shields.io/badge/PCB-OSH_Park-purple)](https://oshpark.com/shared_projects/OPELY7qK)
@@ -55,9 +55,8 @@ To-Do:
 
 | No. | Program| Description |
 | ---- | ---- | ---- |
-|1 | HeartRate | Heart rate calculation with ECG.|
-|2 | BrainWaves | Brain waves amplitude with FFT.|
-|3 | EOGController | EOG based eye movement detection (left/right) to create a game controller.|
+|1 | BrainWaves | Brain waves amplitude with FFT.|
+|2 | EOGController | EOG based eye movement detection (left/right) to create a game controller.|
 
 
 ## Hardware
@@ -79,7 +78,7 @@ BioAmp EXG Pill has been created using KiCad and all the design files can be fou
 
 | Licenses Facts              |  OSHWA Certification |
 | :-------------------------: | :-------------------------: |
-| <a href="LICENSE.md"><img src="graphics/misc/Licenses_facts.svg" width="400" alt="Open Source Licenses Facts"/></a>  | <a href="https://certification.oshwa.org/in000026.html"><img src="graphics/misc/OSHW_mark_IN000026.png" width="300" alt="Open Source Hardware Certification mark"/></a> |
+| <a href="LICENSE.md"><img src="https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/misc/Licenses_facts.svg" width="400" alt="Open Source Licenses Facts"/></a>  | <a href="https://certification.oshwa.org/in000026.html"><img src="https://raw.githubusercontent.com/upsidedownlabs/BioAmp-EXG-Pill/main/graphics/misc/OSHW_mark_IN000026.png" width="300" alt="Open Source Hardware Certification mark"/></a> |
 
 #### Hardware
 CERN Open Hardware License Version 2 - Strongly Reciprocal ([CERN-OHL-S-2.0](https://spdx.org/licenses/CERN-OHL-S-2.0.html)).
