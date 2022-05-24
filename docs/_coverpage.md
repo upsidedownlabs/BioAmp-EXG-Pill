@@ -2,7 +2,7 @@
 
 
 
-# Bio-Amp-EXG-Pill <small>v0.7</small>
+# Bio-Amp-EXG-Pill <small>v1.0</small>
 
 
 
