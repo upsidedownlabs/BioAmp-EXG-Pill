@@ -1,1 +1,0 @@
-This page will contain description of EMG filter.
