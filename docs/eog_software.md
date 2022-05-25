@@ -1,1 +1,0 @@
-This page will describe EOG Software.

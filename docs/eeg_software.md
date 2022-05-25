@@ -1,1 +1,0 @@
-This page will describe EEG Software.
