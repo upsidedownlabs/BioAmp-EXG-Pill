@@ -1,1 +1,1 @@
-This page will contain description of EEG filter.
+This page will describe EEG Filter.

@@ -1,1 +1,1 @@
-This page will contain description of EMG filter.
+This page will describe EMG Filter.

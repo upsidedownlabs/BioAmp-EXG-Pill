@@ -14,10 +14,10 @@
 
 - Software
 
-  - [EOG Filter](eog_filter.md)
-  - [EMG Filter](emg_filter.md)
-  - [EEG Filter](eeg_filter.md)
-  - [ECG Filter](ecg_filter.md)
+  - [EOG Software](eog_software.md)
+  - [EMG Software](emg_software.md)
+  - [EEG Software](eeg_software.md)
+  - [ECG Software](ecg_software.md)
 
 - Hardware
   - [Arduino](arduino.md)

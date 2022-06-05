@@ -1,1 +1,1 @@
-This page will contain description of EOG filter.
+This page will describe EOG Filter.

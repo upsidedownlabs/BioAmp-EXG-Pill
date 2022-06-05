@@ -1,1 +1,1 @@
-This page will contain description of ECG filter.
+This page will describe ECG Filter.
