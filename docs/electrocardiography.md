@@ -8,7 +8,7 @@ An accurate heartbeat detection (peak detection) algorithm that works on a small
 <br></br>
 <p style="text-align: center;"> <b> Resulting ECG Signal Wave </b></p>
 <div style="text-align:center;">
-<img src="images/ECG/bioamp-exg-pill-electrocardiography-wave.jpg" alt=" sketch" style="height: 280px; width:560px;"/>
+<img src="images/ECG/bioamp-exg-pill-electrocardiography-wave.jpg" alt="sketch" style="height: 280px; width:560px;"/>
 </div>
 
 
@@ -31,7 +31,7 @@ A very basic method for detecting heartbeats is to place the electrodes near the
 
 <p style="text-align: center;"> <b> Chest ECG HeartBeat Detection Arduino Sketch </b></p>
 <div style="text-align:center;">
-<img src=" images/ECG/bioamp-exg-pill-electrocardiography-lead1.jpg" alt="ECG" style="height: 315px; width:560px;"/>
+<img src="images/ECG/bioamp-exg-pill-electrocardiography-lead1.jpg" alt="ECG" style="height: 315px; width:560px;"/>
 </div>
 <br>
 </br>
@@ -52,7 +52,7 @@ The BioAmp EXG pill is very sensitive to BioPotential signals, so you can even d
 
 <p style="text-align: center;"> <b> Hand EKG HeartBeat Detection Arduino Sketch </b></p>
 <div style="text-align:center;">
-<img src=" images/ECG/bioamp-exg-pill-electrocardiography-hand.jpg " alt="sketch" style="height: 315px; width:560px;"/>
+<img src="images/ECG/bioamp-exg-pill-electrocardiography-hand.jpg " alt="sketch" style="height: 315px; width:560px;"/>
 </div>
 <br></br>
 <p style="text-align: center;"> <b> Hand EKG HeartBeat Detection Video</b></p>

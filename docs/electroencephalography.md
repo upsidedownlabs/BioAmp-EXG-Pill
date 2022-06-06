@@ -8,7 +8,7 @@
 <br></br>
 <p style="text-align: center;"> <b> Resulting EEG Signal Wave </b></p>
 <div style="text-align:center;">
-<img src=" images/EEG/bioamp-exg-pill-electroencephalography-wave.jpg" alt="eeg sketch" style="height: 285px; width:560px;"/>
+<img src="images/EEG/bioamp-exg-pill-electroencephalography-wave.jpg" alt="eeg sketch" style="height: 285px; width:560px;"/>
 </div>
 
 ## How to Create an Electroencephalograph With BioAmp EXG Pill?
@@ -17,7 +17,7 @@ An EEG is performed using an instrument called an electroencephalograph to produ
 <br></br>
 <p style="text-align: center;"> <b> Frontal-cortex EEG Signal Sketch </b></p>
 <div style="text-align:center;">
-<img src=" images/EEG/bioamp-exg-pill-electroencephalography.jpg" alt="eeg sketch" style="height: 315px; width:560px;"/>
+<img src="images/EEG/bioamp-exg-pill-electroencephalography.jpg" alt="eeg sketch" style="height: 315px; width:560px;"/>
 </div>
 <br>
 </br>
@@ -25,7 +25,7 @@ To record nice clean EEG signals with BioAmp EXG Pill, all you need is the Analo
 <br></br>
 <p style="text-align: center;"> <b> EEG Filter Sketch </b></p>
 <div style="text-align:center;">
-<img src=" images/EEG/bioamp-exg-pill-eegfilter.jpg" alt="eeg sketch" style="height: 315px; width:560px;"/>
+<img src="images/EEG/bioamp-exg-pill-eegfilter.jpg" alt="eeg sketch" style="height: 315px; width:560px;"/>
 </div>
 
 ## Frontal EEG Recording

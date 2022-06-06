@@ -5,7 +5,7 @@
 <br></br>
 <p style="text-align: center;"> <b> Resulting EMG Signal Wave </b></p>
 <div style="text-align:center;">
-<img src=" images/EMG/bioamp-exg-pill-emg-wave.jpg" alt="eeg sketch" style="max-width:70%;border:6px " style="height: 315px; width:560px;"/>
+<img src="images/EMG/bioamp-exg-pill-emg-wave.jpg" alt="eeg sketch" style="max-width:70%;border:6px " style="height: 315px; width:560px;"/>
 </div>
 <br></br>
 
@@ -15,7 +15,7 @@ EMG is performed using an instrument called an electromyograph to produce a reco
 <br></br>
 <p style="text-align: center;"> <b> Hand Movement EMG Signal Sketch </b></p>
 <div style="text-align:center;">
-<img src=" images/EMG/bioamp-exg-pill-electromyograph.jpg" alt="eeg sketch" style="height: 315px; width:560px;"/>
+<img src="images/EMG/bioamp-exg-pill-electromyograph.jpg" alt="eeg sketch" style="height: 315px; width:560px;"/>
 </div>
 <br></br>
 
@@ -23,7 +23,7 @@ To record nice clean EMG signals with BioAmp EXG Pill, all you need is the Analo
 <br></br>
 <p style="text-align: center;"> <b> EMG Filter Sample Sketch </b></p>
 <div style="text-align:center;">
-<img src=" images/EMG/bioamp-exg-pill-emgfilter.jpg" alt="eeg sketch" style="max-width:70%;border:6px " style="height: 315px; width:560px;"/>
+<img src="images/EMG/bioamp-exg-pill-emgfilter.jpg" alt="eeg sketch" style="max-width:70%;border:6px " style="height: 315px; width:560px;"/>
 </div>
 <br></br>
 For practical use cases, we need a smooth signal, but the raw EMG signal does not come out as a smooth curve, which is why we offer the <a href="https://github.com/upsidedownlabs/BioAmp-EXG-Pill/tree/main/software/EMGEnvelop/EMGEnvelop.ino" style="color: #b38600; text-decoration: none;"> envelope-detection Arduino sketch</a> for BioAmp EXG Pill. The video below shows envelope detection at work:
@@ -39,7 +39,7 @@ BioAmp EXG Pill allows you to do a lot with muscle power. We show two examples b
 <br></br>
 <p style="text-align: center;"> <b> EMG Envelope Wave </b></p>
 <div style="text-align:center;">
-<img src=" images/EMG/bioamp-exg-pill-emgenvelope.jpg" alt="eeg sketch" style="max-width:70%;border:6px " style="height: 315px; width:560px;"/>
+<img src="images/EMG/bioamp-exg-pill-emgenvelope.jpg" alt="eeg sketch" style="max-width:70%;border:6px " style="height: 315px; width:560px;"/>
 </div>
 <br></br>
 

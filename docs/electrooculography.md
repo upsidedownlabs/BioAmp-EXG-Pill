@@ -7,7 +7,7 @@
 <br></br>
 <p style="text-align: center;"> <b> Resulting EOG Signal Wave </b></p>
 <div style="text-align:center;">
-<img src=" images/EOG/bioamp-exg-pill-eog-demo.jpg" alt="exg sketch" style="max-width:70%;border:6px " style="height: 315px; width:560px;"/>
+<img src="images/EOG/bioamp-exg-pill-eog-demo.jpg" alt="exg sketch" style="max-width:70%;border:6px " style="height: 315px; width:560px;"/>
 </div>
 <br></br>
 
@@ -20,7 +20,7 @@ EOG is performed using an instrument called an electrooculograph to produce a re
 
 <p style="text-align: center;"> <b> EOG Electrode Placement Sketch </b></p>
 <div style="text-align:center;">
-<img src=" images/EOG/bioamp-exg-pill-eog-electrode-placement.jpg" alt="eeg sketch"  style="height: 315px; width:560px;"/>
+<img src="images/EOG/bioamp-exg-pill-eog-electrode-placement.jpg" alt="eeg sketch"  style="height: 315px; width:560px;"/>
 </div>
 
 To record nice clean EOG signals with BioAmp EXG Pill, all you need is the Analog Serial Out Arduino example sketch. If you want some more control we also have a <a href="https://github.com/upsidedownlabs/BioAmp-EXG-Pill/tree/main/software/FixedSampling" style="color: brown; text-decoration: none;"> Fixed Sampling example sketch</a>
@@ -28,7 +28,7 @@ To record nice clean EOG signals with BioAmp EXG Pill, all you need is the Analo
 <br></br>
 <p style="text-align: center;"> <b> EOG-Filter Sketch</b></p>
 <div style="text-align:center;">
-<img src=" images/EOG/bioamp-exg-pill-eogfilter.jpg" alt="exg sketch" style="max-width:70%;border:6px " style="height: 315px; width:560px;"/>
+<img src="images/EOG/bioamp-exg-pill-eogfilter.jpg" alt="exg sketch" style="max-width:70%;border:6px " style="height: 315px; width:560px;"/>
 </div>
 
 _**Note**: BioAmp EXG Pill is not a certified medical device and should not be treated like one._
@@ -43,7 +43,7 @@ To record horizontal eye movement, place the electrodes near your left and right
 <br></br>
 <p style="text-align: center;"> <b> Horizontal Eye-Movement Sketch </b></p>
 <div style="text-align:center;">
-<img src=" images/EOG/bioamp-exg-pill-electrooculography-horizontal.jpg" alt="eeg sketch"  style="height: 315px; width:560px;"/>
+<img src="images/EOG/bioamp-exg-pill-electrooculography-horizontal.jpg" alt="eeg sketch"  style="height: 315px; width:560px;"/>
 </div>
 <br></br>
 <p style="text-align: center;"> <b> Horizontal Eye-Movement Recording</b></p>
@@ -61,7 +61,7 @@ To record vertical eye movement, place the electrodes above and below your left 
 <br></br>
 <p style="text-align: center;"> <b> Vertical Eye-Movement Sketch </b></p>
 <div style="text-align:center;">
-<img src=" images/EOG/bioamp-exg-pill-electrooculography-vertical.jpg" alt="eeg sketch"  style="height: 315px; width:560px;"/>
+<img src="images/EOG/bioamp-exg-pill-electrooculography-vertical.jpg" alt="eeg sketch"  style="height: 315px; width:560px;"/>
 </div>
 
 ## Eye-Blink Detection
