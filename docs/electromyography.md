@@ -5,7 +5,7 @@
 <br></br>
 <p style="text-align: center;"> <b> Resulting EMG Signal Wave </b></p>
 <div style="text-align:center;">
-<img src="images/EMG/bioamp-exg-pill-emg-wave.jpg" alt="eeg sketch" style="max-width:70%;border:6px " style="height: 315px; width:560px;"/>
+<img src="images/EMG/bioamp-exg-pill-emg-wave.jpg" alt="emg-wave-diagram" style="max-width:70%;border:6px " style="height: 315px; width:560px;"/>
 </div>
 <br></br>
 
@@ -13,9 +13,9 @@
 
 EMG is performed using an instrument called an electromyograph to produce a record called an electromyogram. Common electrode placement for recording good EMG signal for hand movement is near the ulnar nerve, as shown in the diagram below.
 <br></br>
-<p style="text-align: center;"> <b> Hand Movement EMG Signal Sketch </b></p>
+<p style="text-align: center;"> <b> Hand Movement EMG Signal Diagram </b></p>
 <div style="text-align:center;">
-<img src="images/EMG/bioamp-exg-pill-electromyograph.jpg" alt="eeg sketch" style="height: 315px; width:560px;"/>
+<img src="images/EMG/bioamp-exg-pill-electromyograph.jpg" alt="hand-movement-emg-signal-diagram" style="height: 315px; width:560px;"/>
 </div>
 <br></br>
 
@@ -23,7 +23,7 @@ To record nice clean EMG signals with BioAmp EXG Pill, all you need is the Analo
 <br></br>
 <p style="text-align: center;"> <b> EMG Filter Sample Sketch </b></p>
 <div style="text-align:center;">
-<img src="images/EMG/bioamp-exg-pill-emgfilter.jpg" alt="eeg sketch" style="max-width:70%;border:6px " style="height: 315px; width:560px;"/>
+<img src="images/EMG/bioamp-exg-pill-emgfilter.jpg" alt="emg-filter-sample-sketch" style="max-width:70%;border:6px " style="height: 315px; width:560px;"/>
 </div>
 <br></br>
 For practical use cases, we need a smooth signal, but the raw EMG signal does not come out as a smooth curve, which is why we offer the <a href="https://github.com/upsidedownlabs/BioAmp-EXG-Pill/tree/main/software/EMGEnvelop/EMGEnvelop.ino" style="color: #b38600; text-decoration: none;"> envelope-detection Arduino sketch</a> for BioAmp EXG Pill. The video below shows envelope detection at work:
@@ -39,7 +39,7 @@ BioAmp EXG Pill allows you to do a lot with muscle power. We show two examples b
 <br></br>
 <p style="text-align: center;"> <b> EMG Envelope Wave </b></p>
 <div style="text-align:center;">
-<img src="images/EMG/bioamp-exg-pill-emgenvelope.jpg" alt="eeg sketch" style="max-width:70%;border:6px " style="height: 315px; width:560px;"/>
+<img src=" images/EMG/bioamp-exg-pill-emgenvelope.jpg" alt="emg-envelope-wave" style="max-width:70%;border:6px " style="height: 315px; width:560px;"/>
 </div>
 <br></br>
 
@@ -67,3 +67,4 @@ The same envelope-detection concept is used for the LED bar graph project. You c
 1. <a href="https://www.mayoclinic.org/tests-procedures/emg/about/pac-20393913" style="color: #b38600; text-decoration: none;"> Mayo Clinic article on EMG</a>
 2. <a href="https://en.wikipedia.org/wiki/Electromyography" style="color: #b38600; text-decoration: none;"> Wikipedia Electromyography page</a>
 3. <a href="https://www.instructables.com/Claw-Controller-Using-BIOAMP-EXG-PILL/" style="color: #b38600; text-decoration: none;"> PR ROBOTICS _Instructables_ article on _Claw Controller Using BioAmp EXG PILL_</a>
+4. <a href="https://github.com/upsidedownlabs/BioAmp-EXG-Pill" style="color: #b38600; text-decoration: none;"> Upside Down Labs - BioAmp EXG Pill Github repository</a>
