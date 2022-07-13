@@ -1,0 +1,27 @@
+{# Add rst-badge after rst-versions for small badge style. #}
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> BioAmp-EXG-Pill Project</span>
+      v: latest
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl>
+        <dt>{{ _('Document Release Versions') }}</dt>
+        {% for slug, url in versions %}
+          <dd><a href="{{ url }}">{{ slug }}</a></dd>
+        {% endfor %}
+      </dl>
+      <dl>
+        <dt>{{ _('Downloads') }}</dt>
+        {% set prefix = current_version if is_release else "latest" %}
+        <dd><a href="Bioamp-exg-pilldocs.pdf">PDF</a></dd>
+      </dl>
+      <dl>
+        <dt>{{ _('BioAmp-EXG-Pill Links') }}</dt>
+          <dd>
+            <a href="https://upsidedownlabs.github.io/BioAmp-EXG-Pill/#/">Docs</a>
+          </dd>
+      </dl>
+    </div>
+  </div>
