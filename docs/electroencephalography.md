@@ -8,16 +8,17 @@
 <br></br>
 <p style="text-align: center;"> <b> Resulting EEG Signal Wave </b></p>
 <div style="text-align:center;">
-<img src="images/EEG/bioamp-exg-pill-electroencephalography-wave.jpg" alt="eeg sketch" style="height: 285px; width:560px;"/>
+<img src="images/EEG/bioamp-exg-pill-electroencephalography-wave.jpg" alt="eeg-wave-diagram" style="height: 285px; width:560px;"/>
 </div>
 
 ## How to Create an Electroencephalograph With BioAmp EXG Pill?
 
 An EEG is performed using an instrument called an electroencephalograph to produce a record called an electroencephalogram. Electrodes are commonly placed on the forehead, as shown in the diagram below, when recording frontal-cortex EEG signals.
 <br></br>
-<p style="text-align: center;"> <b> Frontal-cortex EEG Signal Sketch </b></p>
+<p style="text-align: center;"> <b> Frontal-Cortex EEG Signal Diagram </b></p>
+<br></br>
 <div style="text-align:center;">
-<img src="images/EEG/bioamp-exg-pill-electroencephalography.jpg" alt="eeg sketch" style="height: 315px; width:560px;"/>
+<img src="images/EEG/bioamp-exg-pill-electroencephalography.jpg" alt="frontal-cortex-eeg-signal" style="height: 315px; width:560px;"/>
 </div>
 <br>
 </br>
@@ -25,7 +26,7 @@ To record nice clean EEG signals with BioAmp EXG Pill, all you need is the Analo
 <br></br>
 <p style="text-align: center;"> <b> EEG Filter Sketch </b></p>
 <div style="text-align:center;">
-<img src="images/EEG/bioamp-exg-pill-eegfilter.jpg" alt="eeg sketch" style="height: 315px; width:560px;"/>
+<img src=" images/EEG/bioamp-exg-pill-eegfilter.jpg" alt="eeg-filter" style="height: 315px; width:560px;"/>
 </div>
 
 ## Frontal EEG Recording
@@ -39,9 +40,10 @@ The video below shows a frontal electroencephalography (EEG) recording for both 
 
 _**Note**: BioAmp EXG Pill is not a certified medical device and should not be treated like one._
 
-## References
+## References 
 
 1. <a href="https://en.wikipedia.org/wiki/Electroencephalography" style="color: #ff3385; text-decoration: none;">https://en.wikipedia.org/wiki/Electroencephalography </a>
 2. <a href="https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/electroencephalogram-eeg" style="color: #ff3385; text-decoration: none;"> https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/electroencephalogram-eeg </a>
+3. <a href="https://github.com/upsidedownlabs/BioAmp-EXG-Pill" style="color: #ff3385; text-decoration: none;">https://github.com/upsidedownlabs/BioAmp-EXG-Pill</a>
 
  
