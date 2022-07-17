@@ -1,0 +1,37 @@
+.wy-side-nav-search > a img.logo {
+    width: 340px;
+    height: 66px;
+}
+
+.rst-content div.figure, .rst-content figure {
+    text-align: center;
+}
+
+.rst-content div.figure p.caption {
+    text-align: center;
+    margin-top: 8px;
+    opacity: 0.75;
+}
+
+.rst-content div.figure.figure-w480 {
+    max-width: 480px;
+}
+
+.wy-nav-content {
+    max-width: 100%;
+}
+
+.wy-side-nav-search {
+    background-color: #25282b;
+    background-color: #25282b;
+}
+
+.wy-nav-top{
+    background-color: #25282b;
+    background-color: #25282b;
+}
+
+.wy-nav-side {
+    background-color: #25282b;
+    background-color: #25282b;
+}

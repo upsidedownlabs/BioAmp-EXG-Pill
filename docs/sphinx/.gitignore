@@ -1,0 +1,46 @@
+*.o
+*.a
+*.d
+*.cmd
+*.log
+*.pyc
+*.swp
+*.swo
+*~
+.\#*
+\#*\#
+cscope.*
+.dir
+
+/*.patch
+
+# The .cache directory will be used to cache toolchain capabilities if
+# no suitable out-of-tree directory is found.
+.cache
+
+_build/*
+build/*
+public/*
+.*project
+.settings
+.envrc
+.vscode
+.idea
+.history/
+*.vsix
+hide-defaults-note
+venv
+.venv
+.DS_Store
+.clangd
+
+# CI output
+compliance.xml
+_error.types
+
+# Tag files
+GPATH
+GRTAGS
+GTAGS
+TAGS
+tags
