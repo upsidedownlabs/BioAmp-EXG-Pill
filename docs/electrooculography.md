@@ -2,7 +2,9 @@
 
    
 <a href="https://en.wikipedia.org/wiki/Electrooculography" style="color: brown; text-decoration: none;"> Electrooculography (EOG)</a>
-  is a technique for measuring the corneo-retinal standing potential that exists between the front and the back of the human eye. The resulting signal is called the electrooculogram.
+ is a technique for measuring the corneo-retinal standing potential that exists between the front and the back of the human eye.The resulting signal is called the electrooculograph and the signal is measured througha device known as electrogram.
+ 
+The mean transepithelial voltage of bovine Retinal pigment epithelium is 6 millivolts (mV). 
 
   <br>
 
