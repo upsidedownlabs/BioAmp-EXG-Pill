@@ -16,6 +16,7 @@ fp-info-cache
 *-backups
 *.log
 *-rescue*
+sym-lib-table
 
 # Netlist files (exported from Eeschema)
 *.net
