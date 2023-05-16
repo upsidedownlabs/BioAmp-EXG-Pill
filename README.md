@@ -11,7 +11,7 @@ BioAmp EXG Pill is a small (2.54 X 1.00 cm) and elegant Analog Front End (AFE) b
 
 | Connection      |  Configuration |
 | :-------------------------: | :-------------------------: |
-| ![BioAmp EXG Pill - Connection](graphics/docs/Front_Specifications.jpg)  | ![BioAmp EXG Pill - Configuration](graphics/docs/Back_Specifications.jpg)|
+| ![BioAmp EXG Pill - Connection](graphics/docs/v1.0_Front_Specifications.jpg)  | ![BioAmp EXG Pill - Configuration](graphics/docs//v1.0_Back_Specifications.jpg)|
 
 | Basic Arduino Circuit           |  Electromyography (EMG) |
 | :-------------------------: | :-------------------------: |
