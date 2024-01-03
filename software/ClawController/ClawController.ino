@@ -38,6 +38,8 @@
 #define SERVO_PIN 9
 #define EMG_MIN 2
 #define EMG_MAX 10
+#define SERVO_MIN 90
+#define SERVO_MAX 180
 
 int circular_buffer[BUFFER_SIZE];
 int data_index, sum;
@@ -54,11 +56,13 @@ void setup() {
 void loop() {
   //For initial setup only
   if(flag==0){
-    Serial.println("Servo is now at 180 degree. Place the Servo arm & screw it in place.");
+    Serial.print("Servo is now at ");
+    Serial.print(SERVO_MAX);
+    Serial.println(" degrees. Place the Servo arm & screw it in place.");
     Serial.println("It is recommended to remove USB while placing servo arm.");
 
-    servo.write(180); 
-    delay(10000);
+    servo.write(SERVO_MAX); 
+    delay(10 * 1000);  // 10 second pause
     flag=1;  
   }
   
@@ -76,9 +80,10 @@ void loop() {
   if(timer < 0) {
     timer += 1000000 / SAMPLE_RATE;
     int sensor_value = analogRead(INPUT_PIN);
-    int signal = EMGFilter(sensor_value);
+    int signal = (int)EMGFilter((float)sensor_value);
     int envelop = getEnvelop(abs(signal));
-    int servo_position = map(envelop, EMG_MIN, EMG_MAX, 90, 180);
+    int servo_position = constrain(map(envelop, EMG_MIN, EMG_MAX, SERVO_MIN, SERVO_MAX),
+                                   SERVO_MIN, SERVO_MAX);
     servo.write(servo_position);
     Serial.print(signal);
     Serial.print(",");
