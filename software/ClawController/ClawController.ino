@@ -25,6 +25,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#include <inttypes.h>
+
 #if defined(ESP32) 
   #include <ESP32Servo.h>
 #else
@@ -42,7 +44,8 @@
 #define SERVO_MAX 180
 
 int circular_buffer[BUFFER_SIZE];
-int data_index, sum;
+int32_t sum;
+int data_index;
 int flag=0;
 Servo servo;
 
