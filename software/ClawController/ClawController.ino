@@ -26,6 +26,7 @@
 // SOFTWARE.
 
 #include <inttypes.h>
+#include <math.h>
 
 #if defined(ESP32) 
   #include <ESP32Servo.h>
@@ -48,6 +49,10 @@ int32_t sum;
 int data_index;
 int flag=0;
 Servo servo;
+
+inline float mapf(float x, float in_min, float in_max, float out_min, float out_max) {
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
 
 void setup() {
   // Serial connection begin
@@ -84,8 +89,10 @@ void loop() {
     timer += 1000000 / SAMPLE_RATE;
     int sensor_value = analogRead(INPUT_PIN);
     int signal = (int)EMGFilter((float)sensor_value);
-    int envelop = getEnvelop(abs(signal));
-    int servo_position = constrain(map(envelop, EMG_MIN, EMG_MAX, SERVO_MIN, SERVO_MAX),
+    float envelop = getEnvelop(abs(signal));
+    int servo_position = constrain((int)roundf(mapf(envelop,
+                                                    EMG_MIN, EMG_MAX,
+                                                    SERVO_MIN, SERVO_MAX)),
                                    SERVO_MIN, SERVO_MAX);
     servo.write(servo_position);
     Serial.print(signal);
@@ -95,12 +102,12 @@ void loop() {
 }
 
 // Envelop detection algorithm
-int getEnvelop(int abs_emg){
+float getEnvelop(int abs_emg){
   sum -= circular_buffer[data_index];
   sum += abs_emg;
   circular_buffer[data_index] = abs_emg;
   data_index = (data_index + 1) % BUFFER_SIZE;
-  return (sum/BUFFER_SIZE) * 2;
+  return (float(sum) / BUFFER_SIZE) * 2.0f;
 }
 
 // Band-Pass Butterworth IIR digital filter, generated using filter_gen.py.
