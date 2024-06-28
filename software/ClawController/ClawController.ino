@@ -25,6 +25,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#include <inttypes.h>
+#include <math.h>
+
 #if defined(ESP32) 
   #include <ESP32Servo.h>
 #else
@@ -38,11 +41,18 @@
 #define SERVO_PIN 9
 #define EMG_MIN 2
 #define EMG_MAX 10
+#define SERVO_MIN 90
+#define SERVO_MAX 180
 
 int circular_buffer[BUFFER_SIZE];
-int data_index, sum;
+int32_t sum;
+int data_index;
 int flag=0;
 Servo servo;
+
+inline float mapf(float x, float in_min, float in_max, float out_min, float out_max) {
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
 
 void setup() {
   // Serial connection begin
@@ -54,11 +64,13 @@ void setup() {
 void loop() {
   //For initial setup only
   if(flag==0){
-    Serial.println("Servo is now at 180 degree. Place the Servo arm & screw it in place.");
+    Serial.print("Servo is now at ");
+    Serial.print(SERVO_MAX);
+    Serial.println(" degrees. Place the Servo arm & screw it in place.");
     Serial.println("It is recommended to remove USB while placing servo arm.");
 
-    servo.write(180); 
-    delay(10000);
+    servo.write(SERVO_MAX); 
+    delay(10 * 1000);  // 10 second pause
     flag=1;  
   }
   
@@ -76,9 +88,12 @@ void loop() {
   if(timer < 0) {
     timer += 1000000 / SAMPLE_RATE;
     int sensor_value = analogRead(INPUT_PIN);
-    int signal = EMGFilter(sensor_value);
-    int envelop = getEnvelop(abs(signal));
-    int servo_position = map(envelop, EMG_MIN, EMG_MAX, 90, 180);
+    int signal = (int)EMGFilter((float)sensor_value);
+    float envelop = getEnvelop(abs(signal));
+    int servo_position = constrain((int)roundf(mapf(envelop,
+                                                    EMG_MIN, EMG_MAX,
+                                                    SERVO_MIN, SERVO_MAX)),
+                                   SERVO_MIN, SERVO_MAX);
     servo.write(servo_position);
     Serial.print(signal);
     Serial.print(",");
@@ -87,12 +102,12 @@ void loop() {
 }
 
 // Envelop detection algorithm
-int getEnvelop(int abs_emg){
+float getEnvelop(int abs_emg){
   sum -= circular_buffer[data_index];
   sum += abs_emg;
   circular_buffer[data_index] = abs_emg;
   data_index = (data_index + 1) % BUFFER_SIZE;
-  return (sum/BUFFER_SIZE) * 2;
+  return (float(sum) / BUFFER_SIZE) * 2.0f;
 }
 
 // Band-Pass Butterworth IIR digital filter, generated using filter_gen.py.
