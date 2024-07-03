@@ -33,7 +33,7 @@
 
 #define SAMPLE_RATE 125
 #define BAUD_RATE 115200
-#define INPUT_PIN 36
+#define INPUT_PIN A2
 #define OUTPUT_PIN 13
 #define DATA_LENGTH 16
 
