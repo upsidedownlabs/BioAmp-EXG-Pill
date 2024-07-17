@@ -34,7 +34,7 @@
 
 #define SAMPLE_RATE 125
 #define BAUD_RATE 115200
-#define INPUT_PIN A2
+#define INPUT_PIN A2  //Analog pin change if input connected to other pin
 #define OUTPUT_PIN 13
 #define DATA_LENGTH 16
 
