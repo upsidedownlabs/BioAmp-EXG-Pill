@@ -8,6 +8,8 @@
 
 // Copyright (c) 2021 - 2024 Upside Down Labs - contact@upsidedownlabs.tech
 // Copyright (c) 2021 - 2024 Aryan Prakhar - aryanprakhar1010@gmail.com
+// Copyright (c) 2021 - 2024 Dev Saran Sujan - devsaransujan@gmail.com
+
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -42,7 +44,7 @@
 // Global variables for BPM calculation
 int data_index = 0;
 uint32_t tdiff = 0;           // Time difference between consecutive peaks
-uint8_t BPM = 0;              // Calculated Beats Per Minute
+uint8_t bpm = 0;              // Calculated Beats Per Minute
 
 // Circular arrays for BPM calculation
 int timeBuffer_index = -1;
@@ -123,9 +125,9 @@ void loop() {
           sum = sum + sumBuffer[sumBuffer_index];
           sumBuffer_index = (sumBuffer_index + 1) % buffer_size;
           average = sum / buffer_size;
-          BPM = (60 * 1000000) / average;
+          bpm = (60 * 1000000) / average;
           Serial.print("BPM : ");
-          Serial.println(BPM);
+          Serial.println(bpm);
         }
       }
     }
@@ -134,58 +136,67 @@ void loop() {
 
 // Function to detect peaks in the ECG signal
 bool Getpeak(float new_sample) {
-  // Buffers for data, mean, and standard deviation
-  static float data_buffer[DATA_LENGTH];
-  static float mean_buffer[DATA_LENGTH];
-  static float standard_deviation_buffer[DATA_LENGTH];
-  
-  // Check for peak
-  bool rawPeak = false;
-  if (new_sample - mean_buffer[data_index] > (DATA_LENGTH/2) * standard_deviation_buffer[data_index]) {
-    data_buffer[data_index] = new_sample + data_buffer[data_index];
-    rawPeak = true;
-  } else {
-    data_buffer[data_index] = new_sample;
-    rawPeak = false;
-  }
+    // DATA_LENGTH explanation:
+    // This constant defines the size of the sliding window used for peak detection.
+    // It determines how many recent samples are considered when calculating the mean 
+    // and standard deviation of the signal. A larger value provides more stable 
+    // detection but may introduce more lag.
 
-  // Event-based debounce logic
-  bool peakEvent = false;
-  unsigned long currentTime = micros();
-  
-  if (rawPeak && !isPeakActive && (currentTime - lastPeakStartTime > peakCooldownPeriod)) {
-    // Start of a new peak
-    isPeakActive = true;
-    lastPeakStartTime = currentTime;
-    peakEvent = true;
-  } else if (!rawPeak && isPeakActive) {
-    // End of the current peak
-    isPeakActive = false;
-  }
+    // Buffers for data, mean, and standard deviation
+    static float data_buffer[DATA_LENGTH];
+    static float mean_buffer[DATA_LENGTH];
+    static float standard_deviation_buffer[DATA_LENGTH];
+    
+    // Check for peak
+    // A peak is detected if the new sample exceeds the mean by more than 
+    // half the DATA_LENGTH times the standard deviation
+    bool rawPeak = false;
+    if (new_sample - mean_buffer[data_index] > (DATA_LENGTH/2) * standard_deviation_buffer[data_index]) {
+        data_buffer[data_index] = new_sample + data_buffer[data_index];
+        rawPeak = true;
+    } else {
+        data_buffer[data_index] = new_sample;
+        rawPeak = false;
+    }
 
-  // Calculate mean
-  float sum = 0.0, mean, standard_deviation = 0.0;
-  for (int i = 0; i < DATA_LENGTH; ++i){
-    sum += data_buffer[(data_index + i) % DATA_LENGTH];
-  }
-  mean = sum / DATA_LENGTH;
+    // Event-based debounce logic
+    // This prevents multiple detections of the same peak by implementing a cooldown period
+    bool peakEvent = false;
+    unsigned long currentTime = micros();
+    
+    if (rawPeak && !isPeakActive && (currentTime - lastPeakStartTime > peakCooldownPeriod)) {
+        // Start of a new peak
+        isPeakActive = true;
+        lastPeakStartTime = currentTime;
+        peakEvent = true;
+    } else if (!rawPeak && isPeakActive) {
+        // End of the current peak
+        isPeakActive = false;
+    }
 
-  // Calculate standard deviation
-  for (int i = 0; i < DATA_LENGTH; ++i){
-    standard_deviation += pow(data_buffer[(i) % DATA_LENGTH] - mean, 2);
-  }
+    // Calculate mean of the data buffer
+    float sum = 0.0, mean, standard_deviation = 0.0;
+    for (int i = 0; i < DATA_LENGTH; ++i){
+        sum += data_buffer[(data_index + i) % DATA_LENGTH];
+    }
+    mean = sum / DATA_LENGTH;
 
-  // Update mean buffer
-  mean_buffer[data_index] = mean;
+    // Calculate standard deviation of the data buffer
+    for (int i = 0; i < DATA_LENGTH; ++i){
+        standard_deviation += pow(data_buffer[(i) % DATA_LENGTH] - mean, 2);
+    }
 
-  // Update standard deviation buffer
-  standard_deviation_buffer[data_index] = sqrt(standard_deviation / DATA_LENGTH);
+    // Update mean buffer
+    mean_buffer[data_index] = mean;
 
-  // Update data_index
-  data_index = (data_index + 1) % DATA_LENGTH;
+    // Update standard deviation buffer
+    standard_deviation_buffer[data_index] = sqrt(standard_deviation / DATA_LENGTH);
 
-  // Return peak event
-  return peakEvent;
+    // Update data_index for circular buffer implementation
+    data_index = (data_index + 1) % DATA_LENGTH;
+
+    // Return true if a peak event occurred, false otherwise
+    return peakEvent;
 }
 
 // Band-Pass Butterworth IIR digital filter for ECG signal

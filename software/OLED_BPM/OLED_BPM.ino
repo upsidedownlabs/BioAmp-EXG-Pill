@@ -8,6 +8,7 @@
 
  Copyright (c) 2021 - 2024 Upside Down Labs - contact@upsidedownlabs.tech
  Copyright (c) 2021 - 2024 Aryan Prakhar - aryanprakhar1010@gmail.com
+ Copyright (c) 2021 - 2024 Dev Saran Sujan - devsaransujan@gmail.com
 
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -163,12 +164,19 @@ void loop() {
 
 // Function to detect peaks in the ECG signal
 bool Getpeak(float new_sample) {
+  // DATA_LENGTH explanation:
+    // This constant defines the size of the sliding window used for peak detection.
+    // It determines how many recent samples are considered when calculating the mean 
+    // and standard deviation of the signal. A larger value provides more stable 
+    // detection but may introduce more lag.
   // Buffers for data, mean, and standard deviation
   static float data_buffer[DATA_LENGTH];
   static float mean_buffer[DATA_LENGTH];
   static float standard_deviation_buffer[DATA_LENGTH];
   
   // Check for peak
+  // A peak is detected if the new sample exceeds the mean by more than 
+  // half the DATA_LENGTH times the standard deviation
   if (new_sample - mean_buffer[data_index] > (DATA_LENGTH/2) * standard_deviation_buffer[data_index]) {
     data_buffer[data_index] = new_sample + data_buffer[data_index];
     peak = true;
