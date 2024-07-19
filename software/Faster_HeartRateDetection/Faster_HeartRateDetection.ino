@@ -1,4 +1,4 @@
-// HeartRateDetection_V2.0 - BioAmp EXG Pill
+// Faster_HeartRateDetection - BioAmp EXG Pill
 // https://github.com/upsidedownlabs/BioAmp-EXG-Pill
 // https://github.com/upsidedownlabs/Heart-BioAmp-Arduino-Firmware
 
@@ -6,10 +6,9 @@
 // please support Upside Down Labs and open-source hardware by purchasing
 // products from Upside Down Labs!
 
-// Copyright (c) 2021 - 2024 Upside Down Labs - contact@upsidedownlabs.tech
-// Copyright (c) 2021 - 2024 Aryan Prakhar - aryanprakhar1010@gmail.com
-// Copyright (c) 2021 - 2024 Dev Saran Sujan - devsaransujan@gmail.com
-
+// Copyright (c) 2021 - 2024 Upside Down Labs - contact [at] upsidedownlabs.tech
+// Copyright (c) 2021 - 2024 Aryan Prakhar - aryanprakhar1010 [at] gmail.com
+// Copyright (c) 2021 - 2024 Dev Saran Sujan - devsaransujan [at] gmail.com
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -29,9 +28,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-
 #include <math.h>
-
 
 // Define constants
 #define SAMPLE_RATE 125       // Sampling rate in Hz
@@ -52,6 +49,7 @@ int sumBuffer_index = -1;
 uint32_t timeBuffer[buffer_size] = {0};
 uint32_t sumBuffer[buffer_size] = {0};
 
+// Variables for BPM calculation
 uint32_t previous_time = 0;
 uint32_t sum = 0;
 uint32_t average = 0;
