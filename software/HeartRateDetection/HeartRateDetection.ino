@@ -8,6 +8,7 @@
 
    Copyright (c) 2021 Moteen Shah moteenshah.02@gmail.com
    Copyright (c) 2021 Upside Down Labs - contact@upsidedownlabs.tech
+   Copyright (c) 2024 Aryan Prakhar aryanprakhar1010@gmail.com
 
    Permission is hereby granted, free of charge, to any person obtaining a copy
    of this software and associated documentation files (the "Software"), to deal
@@ -33,15 +34,15 @@
 
 #define SAMPLE_RATE 125
 #define BAUD_RATE 115200
-#define INPUT_PIN 36
+#define INPUT_PIN A2  //Analog pin change if input connected to other pin
 #define OUTPUT_PIN 13
 #define DATA_LENGTH 16
 
-int avg = 0;
+uint32_t avg = 0;
 int data_index = 0;
 bool peak = false;
 int reading = 0;
-float BPM = 0.0;
+uint8_t BPM = 0;
 bool IgnoreReading = false;
 bool FirstPulseDetected = false;
 unsigned long FirstPulseTime = 0;
@@ -104,7 +105,7 @@ void loop() {
         avg = 0;
         buffer.pop();
         if (BPM < 240){
-          Serial.print("BPM ");
+          Serial.print("BPM: ");
           Serial.println(BPM);
           Serial.flush();
         }
